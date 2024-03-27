@@ -144,15 +144,12 @@ return { -- LSP Configuration & Plugins
       -- Some languages (like typescript) have entire language plugins that can be useful:
       --    https://github.com/pmizio/typescript-tools.nvim
       --
-      -- But for many setups, the LSP (`tsserver`) will work just fine
-      -- tsserver = {},
-      --
-      eslint_d = {},
       tsserver = {},
+      -- eslint = {},
+      eslint_d = {},
       clangd = {},
       cpptools = {},
       cpplint = {},
-      eslint = {},
       shellcheck = {},
       -- prettier = {},
       autopep8 = {},
@@ -200,6 +197,8 @@ return { -- LSP Configuration & Plugins
       'clangd',
       'cpplint',
       'bashls',
+      'eslint_d',
+      -- 'eslint',
       'cmake',
       'cssls',
       'dockerls',
@@ -212,7 +211,6 @@ return { -- LSP Configuration & Plugins
       'pyright',
       'tailwindcss',
       'wgsl_analyzer',
-      'eslint_d',
       'shellcheck',
     })
     vim.list_extend(ensure_installed, {

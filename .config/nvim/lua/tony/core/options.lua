@@ -62,8 +62,9 @@ opt.cursorline = true
 opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
-opt.hlsearch = true
+opt.hlsearch = false
 opt.incsearch = true
+
 opt.termguicolors = true
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -93,3 +94,9 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
 
 --options in complete menu
 opt.pumheight = 8
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = '*',
+--   callback = function()
+--     vim.opt_local.formatoptions:remove { 'r', 'o' }
+--   end,
+-- })

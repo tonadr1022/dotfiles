@@ -32,6 +32,7 @@ map('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- better line joining
 map('n', 'J', 'mzJ`z')
+
 -- delete without yank
 map('n', '<leader>d', '"_d', { desc = 'Delete without yank' })
 map('v', '<leader>d', '"_d', { desc = 'Delete without yank' })
@@ -41,8 +42,8 @@ map('v', '<leader>d', '"_d', { desc = 'Delete without yank' })
 -- end)
 
 -- Window management
-map('n', '<leader>v', ':vsplit<CR>', { noremap = true, silent = true, desc = "Vertical Split" })
+map('n', '<leader>v', ':vsplit<CR>', { noremap = true, silent = true, desc = 'Vertical Split' })
 --vim.api.nvim_set_keymap('n', '<leader>h', ':split<CR>', { noremap = true, silent = true, desc = "Horizontal Split" })
-map('n', '<leader>w', ':close<CR>', { noremap = true, silent = true, desc = "Close Window" })
+map('n', '<leader>w', ':close<CR>', { noremap = true, silent = true, desc = 'Close Window' })
 map('n', '<leader>fw', ':wa | only<CR>', { noremap = true, silent = true })
 map('n', ';c', ':!', { noremap = true, silent = true })
