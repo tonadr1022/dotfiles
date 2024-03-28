@@ -21,6 +21,9 @@ return { -- You can easily change to a different colorscheme.
         floats = 'dark', -- style for floating windows
       },
       hide_inactive_statusline = true,
+      on_colors = function(colors)
+        colors.error = '#ff0000'
+      end,
       on_highlights = function(hl, c)
         local prompt = '#2d3149'
         hl.TelescopeNormal = {
@@ -62,6 +65,7 @@ return { -- You can easily change to a different colorscheme.
     -- Like many other themes, this one has different styles, and you could load
     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
     vim.cmd.colorscheme 'tokyonight-night'
+    vim.cmd 'hi LineNr guifg=#838c9c'
     -- vim.cmd.colorscheme 'moonfly'
     -- vim.cmd.colorscheme 'rose-pine'
   end,

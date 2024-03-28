@@ -1,6 +1,6 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  enabled = false,
+  enabled = true,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
@@ -13,6 +13,7 @@ return {
     nvimtree.setup {
       actions = {
         open_file = {
+          quit_on_open = true,
           window_picker = {
             enable = false,
           },
