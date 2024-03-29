@@ -16,15 +16,15 @@ return {
       end
 
       require('telescope.pickers')
-          .new({}, {
-            prompt_title = 'Harpoon',
-            finder = require('telescope.finders').new_table {
-              results = file_paths,
-            },
-            previewer = conf.file_previewer {},
-            sorter = conf.generic_sorter {},
-          })
-          :find()
+        .new({}, {
+          prompt_title = 'Harpoon',
+          finder = require('telescope.finders').new_table {
+            results = file_paths,
+          },
+          previewer = conf.file_previewer {},
+          sorter = conf.generic_sorter {},
+        })
+        :find()
     end
 
     vim.keymap.set('n', '<leader>A', function()
@@ -54,9 +54,6 @@ return {
     --   harpoon:list():next()
     -- end)
 
-
-
-
     vim.keymap.set('n', '<leader>h', function()
       harpoon:list():select(1)
     end)
@@ -70,10 +67,10 @@ return {
       harpoon:list():select(4)
     end)
 
-    vim.keymap.set('n', '<leader>n', function()
+    vim.keymap.set('n', ';j', function()
       harpoon:list():prev()
     end)
-    vim.keymap.set('n', '<leader>m', function()
+    vim.keymap.set('n', ';k', function()
       harpoon:list():next()
     end)
     vim.keymap.set('n', '<leader>su', function()

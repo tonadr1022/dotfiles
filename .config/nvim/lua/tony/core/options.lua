@@ -11,16 +11,15 @@ opt.relativenumber = true
 opt.spell = true
 opt.mouse = 'a'
 
-opt.showmode = false
-
+opt.showmode = true
 opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 opt.breakindent = true
 -- tab
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+-- vim.opt.tabstop = 4
+-- vim.opt.softtabstop = 4
+-- vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- Save undo history

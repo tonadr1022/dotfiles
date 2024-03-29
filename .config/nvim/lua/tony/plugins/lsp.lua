@@ -145,13 +145,13 @@ return { -- LSP Configuration & Plugins
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       tsserver = {},
-      -- eslint = {},
+      eslint = {},
       eslint_d = {},
       clangd = {},
       cpptools = {},
       cpplint = {},
       shellcheck = {},
-      -- prettier = {},
+      prettierd = {},
       autopep8 = {},
       bashls = {},
       cmake = {},
@@ -164,7 +164,6 @@ return { -- LSP Configuration & Plugins
       matlab_ls = {},
       opencl_ls = {},
       pyright = {},
-      tailwindcss = {},
       wgsl_analyzer = {},
       lua_ls = {
         -- cmd = {...},
@@ -198,7 +197,8 @@ return { -- LSP Configuration & Plugins
       'cpplint',
       'bashls',
       'eslint_d',
-      -- 'eslint',
+      'prettierd',
+      'eslint',
       'cmake',
       'cssls',
       'dockerls',
@@ -209,7 +209,6 @@ return { -- LSP Configuration & Plugins
       'matlab_ls',
       'opencl_ls',
       'pyright',
-      'tailwindcss',
       'wgsl_analyzer',
       'shellcheck',
     })
