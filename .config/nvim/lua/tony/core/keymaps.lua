@@ -41,3 +41,5 @@ map('n', '<leader>pv', ':Ex<CR>', { desc = 'Exit to netrw' })
 map('i', 'kj', '<Esc>')
 map('v', 'kj', '<Esc>')
 vim.keymap.set('n', ';rw', '<cmd>%bd|e#<cr>', { desc = 'Close all buffers but the current one' }) -- https://stackoverflow.com/a/42071865/516188
+-- open macos finder
+map('n', '<leader>of', ':silent !open .<CR>', { desc = 'Open MacOS Finder' })

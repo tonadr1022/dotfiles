@@ -17,9 +17,9 @@ opt.clipboard = 'unnamedplus'
 -- Enable break indent
 opt.breakindent = true
 -- tab
--- vim.opt.tabstop = 4
--- vim.opt.softtabstop = 4
--- vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 -- Save undo history
@@ -86,10 +86,10 @@ vim.cmd [[ set nofoldenable]]
 -- "-" is part of filenames
 opt.isfname:append '@-@'
 
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  -- delay update diagnostics
-  update_in_insert = true,
-})
+-- vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+--   -- delay update diagnostics
+--   update_in_insert = true,
+-- })
 
 --options in complete menu
 opt.pumheight = 8

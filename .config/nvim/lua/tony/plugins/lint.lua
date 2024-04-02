@@ -7,13 +7,13 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
-        cpp = { "cpplint" },
-        sh = { "shellcheck" },
-        javascript = { "eslint_d" },
-        typescript = { "eslint_d" },
-        javascriptreact = { "eslint_d" },
-        typescriptreact = { "eslint_d" },
-        python = { "pylint" },
+        -- cpp = { 'cpplint' },
+        sh = { 'shellcheck' },
+        javascript = { 'eslint_d' },
+        typescript = { 'eslint_d' },
+        javascriptreact = { 'eslint_d' },
+        typescriptreact = { 'eslint_d' },
+        python = { 'pylint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
@@ -45,16 +45,15 @@ return {
       -- lint.linters_by_ft['ruby'] = nil
       -- lint.linters_by_ft['terraform'] = nil
       -- lint.linters_by_ft['text'] = nil
-      local cpplint = require 'lint'.linters.cpplint
-      cpplint.args =
-      {
+      local cpplint = require('lint').linters.cpplint
+      cpplint.args = {
         '--verbose=2',
         '--filter=-build/include_order,-legal/copyright,build/c++11,build/header_guard,whitespace/indent,build/include_order,build/include_what_you_see',
       }
       -- Create autocommand which carries out the actual linting
       -- on the specified events.
       local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
-      vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave', 'TextChanged', }, {
+      vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
         group = lint_augroup,
         callback = function()
           require('lint').try_lint()
