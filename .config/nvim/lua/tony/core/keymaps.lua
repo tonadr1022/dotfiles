@@ -21,7 +21,9 @@ map('n', 'J', 'mzJ`z')
 map('n', ';d', '"_d', { desc = 'Delete without yank' })
 map('v', ';d', '"_d', { desc = 'Delete without yank' })
 -- Window management
-map('n', '<leader>v', ':vsplit<CR>', { noremap = true, silent = true, desc = 'Vertical Split' })
+map('n', '<leader>vv', ':vsplit<CR>', { noremap = true, silent = true, desc = 'Vertical Split' })
+map('n', '<leader>vh', ':hsplit<CR>', { noremap = true, silent = true, desc = 'Horizontal Split' })
+
 --vim.api.nvim_set_keymap('n', '<leader>h', ':split<CR>', { noremap = true, silent = true, desc = "Horizontal Split" })
 map('n', '<leader>w', ':close<CR>', { noremap = true, silent = true, desc = 'Close Window' })
 map('n', '<leader>fw', ':wa | only<CR>', { noremap = true, silent = true })

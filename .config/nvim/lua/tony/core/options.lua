@@ -15,7 +15,7 @@ opt.showmode = true
 opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
-opt.breakindent = true
+opt.breakindent = false
 -- tab
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
