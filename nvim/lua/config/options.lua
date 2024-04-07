@@ -10,6 +10,7 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 opt.spell = true
+opt.spelloptions = "camel"
 opt.mouse = "a"
 
 opt.showmode = true
@@ -55,9 +56,6 @@ opt.colorcolumn = "80"
 -- Preview substitutions live, as you type!
 opt.inccommand = "split"
 
--- Show which line your cursor is on
--- opt.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 10
 
@@ -80,9 +78,9 @@ opt.termguicolors = true
 vim.g.netrw_liststyle = 3
 
 -- folding
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.cmd([[ set nofoldenable]])
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.cmd([[ set nofoldenable]])
 
 -- "-" is part of filenames
 opt.isfname:append("@-@")
@@ -94,3 +92,6 @@ opt.isfname:append("@-@")
 
 --options in complete menu
 opt.pumheight = 8
+
+opt.cursorline = true
+opt.cursorlineopt = "number"

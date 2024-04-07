@@ -260,7 +260,21 @@ return {
       require("telescope").load_extension("fzf")
     end,
   },
-},
+  keys = {
+      {
+        "<leader>/",
+        function() require 'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        previewer = false,
+      }) end, desc = "Fuzzily search current buffer"
+      },
+      {
+        "<leader>rn", vim.lsp.buf.rename, desc = "[R]e[n]ame file",
+      }
+  },
+
+  },
+
+
   -- fix clangd offset encoding 
 {
   "neovim/nvim-lspconfig",
@@ -280,13 +294,13 @@ return {
     --     winblend = 0,
     --   },
     --
-  -- add more treesitter parsers
   {
     "nvim-telescope/telescope.nvim",
     keys = {
       {"<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Find Files"},
     }
   },
+  {"nvim-treesitter/nvim-treesitter-context", enabled = false},
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
