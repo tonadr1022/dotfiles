@@ -1,0 +1,103 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+set scrolloff=8
+
+" Do incremental searching.
+set incsearch
+set clipboard+=unnamed
+set clipboard+=ideaput
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+map <C-c> <Esc>
+nnoremap <leader>; :
+vnoremap <leader>; :
+
+let mapleader = " "
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+set relativenumber number
+inoremap kj <Esc>
+vnoremap kj <Esc>
+
+" delete without yank
+nnoremap ;d "_d
+vnoremap ;d "_d
+" better line joining
+nnoremap J mzJ`z
+" paging cursor center
+nnoremap <C-d> <C-d>zz
+vnoremap <C-d> <C-d>zz
+" search selection cursor center
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+
+nnoremap <leader>of :!open .<CR>
+
+
+" ------------------ PLUGINS and IDEAVIM---------------------
+nnoremap <leader>ca :action ShowIntentionActions<CR> 
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+" window navigation
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>w :action CloseContent<CR>
+
+
+nnoremap <c-=> :action UnSplit<CR>
+
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+
+nnoremap <s-TAB> :action PreviousTab<CR>
+nnoremap <TAB> :action NextTab<CR>
+
+map<leader>rd <Action>(Debug)
+
+map <leader>e <Action>(FileStructurePopup)
+map <leader>db <Action>(ToggleLineBreakpoint)
+
+nnoremap <c-s> :action FileStructurePopup<CR>
+nnoremap <c-o> :action GotoSymbol<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gD :action GotoDeclaration<CR>
+nnoremap gd :action GoToDefinition<CR>
+nnoremap gp :action GotoSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+" terminal
+nnoremap <c-.> <Action>(Terminal)
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/argtextobj.vim'
+
+map <leader>f <Action>(ReformatCode)
+
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+set which-key
+set timeoutlen=5000
+
+nnoremap <leader>e
+
+map <c-e> :NERDTreeToggle<CR>
