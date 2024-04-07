@@ -92,10 +92,8 @@ web-search
 git
 zsh-autosuggestions
 sudo
-zsh-syntax-highlighting
+# zsh-syntax-highlighting
 zsh-bat
-
-
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -155,3 +153,4 @@ alias clangformatfilehere='~/.local/share/nvim/mason/bin/clang-format --style GO
 # source /Users/tony/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
