@@ -127,7 +127,7 @@ alias c="clear"
 # configs
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias nvimconfig='cd ~/.config/nvim; nvim .'
+alias nvimconfig='nvim ~/.config/nvim'
 alias savezshconfig="source ~/.zshrc"
 alias tmuxconfig='nvim ~/.tmux.conf'
 
@@ -151,4 +151,12 @@ alias clangformatfilehere='~/.local/share/nvim/mason/bin/clang-format --style GO
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+if [[ "$(uname)" == "Linux" ]]; then
+    # Set the compiler for Linux
+    export CC=clang
+    export CXX=clang++
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
