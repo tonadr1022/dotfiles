@@ -92,11 +92,13 @@ web-search
 git
 zsh-autosuggestions
 sudo
-# zsh-syntax-highlighting
+zsh-syntax-highlighting
 zsh-bat
+fzf
 	)
 
 source $ZSH/oh-my-zsh.sh
+export FZF_DEFAULT_OPTS="--reverse $FZF_DEFAULT_OPTS"
 
 # User configuration
 
@@ -130,9 +132,7 @@ alias savezshconfig="source ~/.zshrc"
 alias tmuxconfig='nvim ~/.tmux.conf'
 
 # vim 
-alias vim="nvim"
 alias n='nvim .'
-alias oldvim="vim"
 alias uw='ssh adriansen@best-linux.cs.wisc.edu'
 alias mount354='sshfs adriansen@best-linux.cs.wisc.edu://home/adriansen/private/cs354/ /tmp/remote-mount'
 alias mount368='sshfs adriansen@best-linux.cs.wisc.edu://home/adriansen/private/cs368/ /tmp/remote-mount'
@@ -150,7 +150,5 @@ alias clangformatfilehere='~/.local/share/nvim/mason/bin/clang-format --style GO
 # alias imgcat='~/scripts/imgcat.sh'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# source /Users/tony/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
