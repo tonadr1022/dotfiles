@@ -182,17 +182,6 @@
 --   { import = "lazyvim.plugins.extras.lang.json" },
 --
 --   -- add any tools you want to have installed below
---   {
---     "williamboman/mason.nvim",
---     opts = {
---       ensure_installed = {
---         "stylua",
---         "shellcheck",
---         "shfmt",
---         "flake8",
---       },
---     },
---   },
 --
 --   -- Use <tab> for completion and snippets (supertab)
 --   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
@@ -279,13 +268,47 @@ return {
 {
   "neovim/nvim-lspconfig",
   opts = {
+      servers = {glslls = {
+        filetypes = {"glsl", "vs", "fs"},
+      }},
     setup = {
       clangd = function(_, opts)
         opts.capabilities.offsetEncoding = { "utf-16" }
       end,
-    },
+
+      },
   },
 },
+
+-- {
+--   "neovim/nvim-lspconfig",
+--   opts = {
+--     servers = { eslint = {} },
+--     setup = {
+--       eslint = function()
+--         require("lazyvim.util").lsp.on_attach(function(client)
+--           if client.name == "eslint" then
+--             client.server_capabilities.documentFormattingProvider = true
+--           elseif client.name == "tsserver" then
+--             client.server_capabilities.documentFormattingProvider = false
+--           end
+--         end)
+--       end,
+--     },
+--   },
+-- },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = {
+  --     ensure_installed = {
+  --       "stylua",
+  --       "shellcheck",
+  --       "shfmt",
+  --       "flake8",
+  --       "glslls",
+  --     },
+  --   },
+  -- },
     -- opts = {
     --   defaults = {
     --     layout_strategy = "horizontal",
@@ -319,7 +342,32 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "glsl",
+        "hlsl"
       },
     },
    },
+  parsers = {
+    glsl = {
+      install_info = {
+        url = "https://github.com/tree-sitter/tree-sitter-glsl",
+        files = {"src/parser.c"},
+      },
+      filetype = "glsl" -- Vertex shader filetype
+    },
+    glsl_fs = {
+      install_info = {
+        url = "https://github.com/tree-sitter/tree-sitter-glsl",
+        files = {"src/parser.c"},
+      },
+      filetype = "fs" -- Fragment shader filetype
+    },  
+    glsl_vs = {
+      install_info = {
+        url = "https://github.com/tree-sitter/tree-sitter-glsl",
+        files = {"src/parser.c"},
+      },
+      filetype = "vs" -- Fragment shader filetype
+    },  
+  }
 }
