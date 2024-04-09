@@ -130,6 +130,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias nvimconfig='nvim ~/.config/nvim'
 alias savezshconfig="source ~/.zshrc"
 alias tmuxconfig='nvim ~/.tmux.conf'
+alias alacrittyconfig="nvim ~/.alacritty.toml"
 
 # vim 
 alias n='nvim .'
