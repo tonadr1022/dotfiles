@@ -240,6 +240,7 @@ return {
   {"nvim-lualine/lualine.nvim", enabled = false},
   {"akinsho/bufferline.nvim", enabled = false},
   {"echasnovski/mini.indentscope", enabled = false},
+  {"folke/flash.nvim", enabled = false},
   {
   "telescope.nvim",
   dependencies = {
@@ -268,9 +269,9 @@ return {
 {
   "neovim/nvim-lspconfig",
   opts = {
-      servers = {glslls = {
-        filetypes = {"glsl", "vs", "fs"},
-      }},
+      -- servers = {glslls = {
+      --   filetypes = {"glsl", "vs", "fs"},
+      -- }},
     setup = {
       clangd = function(_, opts)
         opts.capabilities.offsetEncoding = { "utf-16" }
