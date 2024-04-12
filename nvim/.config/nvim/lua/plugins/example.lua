@@ -266,21 +266,21 @@ return {
 
 
   -- fix clangd offset encoding 
-{
-  "neovim/nvim-lspconfig",
-  opts = {
-      -- servers = {glslls = {
-      --   filetypes = {"glsl", "vs", "fs"},
-      -- }},
-    setup = {
-      clangd = function(_, opts)
-        opts.capabilities.offsetEncoding = { "utf-16" }
-      end,
-
-      },
-  },
-},
-
+-- {
+--   "neovim/nvim-lspconfig",
+--   opts = {
+--       -- servers = {glslls = {
+--       --   filetypes = {"glsl", "vs", "fs"},
+--       -- }},
+--     setup = {
+--       -- clangd = function(_, opts)
+--       --   opts.capabilities.offsetEncoding = { "utf-16" }
+--       -- end,
+--
+--       },
+--   },
+-- },
+--
 -- {
 --   "neovim/nvim-lspconfig",
 --   opts = {

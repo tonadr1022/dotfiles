@@ -21,14 +21,14 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 -- better line joining
 map("n", "J", "mzJ`z")
 -- delete without yank
-map("n", ";d", '"_d', { desc = "Delete without yank" })
-map("v", ";d", '"_d', { desc = "Delete without yank" })
+-- map("n", ";d", '"_d', { desc = "Delete without yank" })
+-- map("v", ";d", '"_d', { desc = "Delete without yank" })
 -- Window management
 map("n", "<leader>vv", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical Split" })
 map("n", "<leader>vh", ":hsplit<CR>", { noremap = true, silent = true, desc = "Horizontal Split" })
 
 --vim.api.nvim_set_keymap('n', '<leader>h', ':split<CR>', { noremap = true, silent = true, desc = "Horizontal Split" })
-map("n", "<leader>w", ":close<CR>", { noremap = true, silent = true, desc = "Close Window" })
+-- map("n", "<leader>w", ":close<CR>", { noremap = true, silent = true, desc = "Close Window" })
 map("n", "<leader>fw", ":wa | only<CR>", { noremap = true, silent = true })
 map("n", "<leader>rr", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
@@ -45,6 +45,6 @@ map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>pv", ":Ex<CR>", { desc = "Exit to netrw" })
 map("i", "kj", "<Esc>")
 map("v", "kj", "<Esc>")
-vim.keymap.set("n", ";rw", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but the current one" }) -- https://stackoverflow.com/a/42071865/516188
+-- vim.keymap.set("n", ";rw", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but the current one" }) -- https://stackoverflow.com/a/42071865/516188
 -- open macos finder
 map("n", "<leader>of", ":silent !open .<CR>", { desc = "Open MacOS Finder" })

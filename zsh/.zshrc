@@ -159,6 +159,10 @@ if [[ "$(uname)" == "Linux" ]]; then
     export CXX=clang++
 fi
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
