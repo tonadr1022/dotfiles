@@ -48,9 +48,13 @@ nnoremap <leader>ca :action ShowIntentionActions<CR>
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nmap <leader>sf <action>(GotoFile)
+nmap <leader>rn <action>(RenameElement)
+nmap <leader>rf <action>(RenameFile)
 
 " window navigation
-nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>vv :action SplitVertically<CR>
+nnoremap <leader>vh :action SplitHorizontally<CR>
 nnoremap <leader>w :action CloseContent<CR>
 
 
@@ -63,9 +67,10 @@ nnoremap <s-TAB> :action PreviousTab<CR>
 nnoremap <TAB> :action NextTab<CR>
 
 map<leader>rd <Action>(Debug)
+map<leader>rr <Action>(Run)
 
-map <leader>e <Action>(FileStructurePopup)
-map <leader>db <Action>(ToggleLineBreakpoint)
+
+nmap <leader>db <Action>(ToggleLineBreakpoint)
 
 nnoremap <c-s> :action FileStructurePopup<CR>
 nnoremap <c-o> :action GotoSymbol<CR>
@@ -77,7 +82,7 @@ nnoremap gt :action GotoTest<CR>
 nnoremap gb :action Back<CR>
 nnoremap gf :action Forward<CR>
 " terminal
-nnoremap <c-.> <Action>(Terminal)
+nmap <c-.> <Action>(Terminal)
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
 " Highlight copied text
@@ -97,7 +102,5 @@ nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 set which-key
 set timeoutlen=5000
-
-nnoremap <leader>e
 
 map <c-e> :NERDTreeToggle<CR>
