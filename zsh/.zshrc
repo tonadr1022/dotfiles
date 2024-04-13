@@ -147,7 +147,7 @@ alias td="tmux detach"
 alias ta="tmux attach"
 
 alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
-alias cpphere='cp ~/.clang-format .; cp ~/.clang-tidy .'
+alias cpphere='cp -f ~/.clang-format .; cp -f ~/.clang-tidy .'
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
