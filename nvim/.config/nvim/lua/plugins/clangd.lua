@@ -68,6 +68,7 @@ return {
             offsetEncoding = { "utf-16" },
           },
           cmd = {
+            -- stylua: ignore
             "clangd",
             "--background-index",
             "--clang-tidy",

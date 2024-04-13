@@ -8,6 +8,7 @@ set scrolloff=8
 " Do incremental searching.
 set incsearch
 set hlsearch
+map <Esc> :set nohlsearch<CR>
 set clipboard+=unnamed
 set clipboard+=ideaput
 " Don't use Ex mode, use Q for formatting.
@@ -53,6 +54,7 @@ nnoremap <leader>hi :action ShowHoverInfo<CR>
 nmap <leader>sf <action>(GotoFile)
 nmap <leader>rn <action>(RenameElement)
 nmap <leader>rf <action>(RenameFile)
+nmap <leader>wa <action>(SaveAll)
 
 " window navigation
 nnoremap <leader>vv :action SplitVertically<CR>

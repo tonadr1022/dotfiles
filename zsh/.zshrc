@@ -145,8 +145,9 @@ alias unmount='cd && umount /tmp/remote-mount/'
 # tmux
 alias td="tmux detach"
 alias ta="tmux attach"
-alias clangformatfilehere='~/.local/share/nvim/mason/bin/clang-format --style GOOGLE --dump-config > .clang-format'
 
+alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
+alias cpphere='cp ~/.clang-format .; cp ~/.clang-tidy .'
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

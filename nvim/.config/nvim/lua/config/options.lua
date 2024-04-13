@@ -52,7 +52,7 @@ opt.splitbelow = true
 --  and `:help 'listchars'`
 opt.list = true
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-opt.colorcolumn = "80"
+opt.colorcolumn = "120"
 -- Preview substitutions live, as you type!
 opt.inccommand = "split"
 
