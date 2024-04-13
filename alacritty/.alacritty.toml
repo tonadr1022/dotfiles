@@ -22,3 +22,4 @@ hide_when_typing = true
 
 [font]
 normal = { family = "JetBrainsMono NF" }
+bold = { family = "JetBrainsMono NF" }
