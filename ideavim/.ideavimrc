@@ -7,6 +7,7 @@ set scrolloff=8
 
 " Do incremental searching.
 set incsearch
+set hlsearch
 set clipboard+=unnamed
 set clipboard+=ideaput
 " Don't use Ex mode, use Q for formatting.
@@ -48,6 +49,7 @@ nnoremap <leader>ca :action ShowIntentionActions<CR>
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <leader>hi :action ShowHoverInfo<CR>
 nmap <leader>sf <action>(GotoFile)
 nmap <leader>rn <action>(RenameElement)
 nmap <leader>rf <action>(RenameFile)
