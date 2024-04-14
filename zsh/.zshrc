@@ -93,12 +93,12 @@ git
 zsh-autosuggestions
 sudo
 zsh-syntax-highlighting
-zsh-bat
 fzf
+nvm
 	)
 
 source $ZSH/oh-my-zsh.sh
-export FZF_DEFAULT_OPTS="--reverse $FZF_DEFAULT_OPTS"
+export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 
 # User configuration
 
@@ -121,8 +121,10 @@ export FZF_DEFAULT_OPTS="--reverse $FZF_DEFAULT_OPTS"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+alias cat="batcat"
 alias mkdir="mkdir -pv" 
 alias c="clear"
+alias rd="rm -rf"
 
 # configs
 alias zshconfig="nvim ~/.zshrc"
@@ -133,7 +135,7 @@ alias tmuxconfig='nvim ~/.tmux.conf'
 alias alacrittyconfig="nvim ~/.alacritty.toml"
 
 # vim 
-alias n='nvim .'
+alias n='nvim'
 alias uw='ssh adriansen@best-linux.cs.wisc.edu'
 alias mount354='sshfs adriansen@best-linux.cs.wisc.edu://home/adriansen/private/cs354/ /tmp/remote-mount'
 alias mount368='sshfs adriansen@best-linux.cs.wisc.edu://home/adriansen/private/cs368/ /tmp/remote-mount'
@@ -145,6 +147,9 @@ alias unmount='cd && umount /tmp/remote-mount/'
 # tmux
 alias td="tmux detach"
 alias ta="tmux attach"
+alias t="~/.local/scripts/tmux-sessionizer.sh"
+PATH="$PATH":"$HOME/.local/scripts/"
+bindkey -s ^f "tmux-sessionizer.sh\n"
 
 alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
 alias cpphere='cp -f ~/.clang-format .; cp -f ~/.clang-tidy .'
@@ -167,6 +172,8 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-export NVM_DIR="$HOME/.config/nvm"
+# export NVM_DIR="$HOME/.config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
