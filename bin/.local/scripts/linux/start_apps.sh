@@ -1,7 +1,5 @@
 #!/bin/bash
 
-alacritty &
 google-chrome &
+alacritty &
 flatpak run com.discordapp.Discord
-
-wmctrl -s 0
