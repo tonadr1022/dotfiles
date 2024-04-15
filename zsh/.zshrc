@@ -121,7 +121,11 @@ export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias cat="batcat"
+if [[ "$(uname)" == "Linux" ]]; then
+  alias cat="batcat"
+else
+  alias cat="bat"
+fi
 alias mkdir="mkdir -pv" 
 alias c="clear"
 alias rd="rm -rf"
