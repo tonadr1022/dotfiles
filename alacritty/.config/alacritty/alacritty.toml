@@ -4,9 +4,8 @@ live_config_reload = true
 [window]
 decorations = "None"
 opacity = 1.0
-title = "Test"
-position = { x = 0, y = 0 }
-padding = { x = 12, y = 12 }
+# position = { x = 0, y = 0 }
+padding = { x = 6, y = 0 }
 
 [colors.primary]
 background = "#000000"

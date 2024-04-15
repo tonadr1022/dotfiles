@@ -136,6 +136,8 @@ alias alacrittyconfig="nvim ~/.alacritty.toml"
 
 # vim 
 alias n='nvim'
+alias nf='nvim "$(fzf)"'
+alias cf='cat "$(fzf)"'
 alias uw='ssh adriansen@best-linux.cs.wisc.edu'
 alias mount354='sshfs adriansen@best-linux.cs.wisc.edu://home/adriansen/private/cs354/ /tmp/remote-mount'
 alias mount368='sshfs adriansen@best-linux.cs.wisc.edu://home/adriansen/private/cs368/ /tmp/remote-mount'
@@ -177,3 +179,5 @@ fi
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# neofetch
