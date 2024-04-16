@@ -12,7 +12,7 @@ map <Esc> :set nohlsearch<CR>
 set clipboard+=unnamed
 set clipboard+=ideaput
 " Don't use Ex mode, use Q for formatting.
-map Q gq
+map Q gj
 map <C-c> <Esc>
 nnoremap <leader>; :
 vnoremap <leader>; :
@@ -100,7 +100,6 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/argtextobj.vim'
 
 map <leader>f <Action>(ReformatCode)
-
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
