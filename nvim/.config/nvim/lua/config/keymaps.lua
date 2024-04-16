@@ -39,14 +39,14 @@ vim.keymap.del({ "n", "v" }, "<C-F>")
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
---
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-map("n", "<leader>pv", ":Ex<CR>", { desc = "Exit to netrw" })
+-- map("n", "<leader>pv", ":Ex<CR>", { desc = "Exit to netrw" })
 map("i", "kj", "<Esc>")
 map("v", "kj", "<Esc>")
 -- vim.keymap.set("n", ";rw", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but the current one" }) -- https://stackoverflow.com/a/42071865/516188
 -- open macos finder
-map("n", "<leader>of", ":silent !open .<CR>", { desc = "Open MacOS Finder" })
+map("n", "<leader>of", ":silent !open .<CR>", { desc = "Open System File Explorer" })
 -- map("n", "<C-f>", ":silent !~/.local/scripts/tmux-sessionizer.sh <CR>", { desc = "tmux-sessionizer" })
+-- vim.keymap.del({ "n", "v" }, "<space><space>")

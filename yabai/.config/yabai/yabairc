@@ -13,7 +13,6 @@ sudo yabai --load-sa
 
 # global settings
 yabai -m config \
-	\
 	menubar_opacity 1.0 \
 	window_placement second_child \
 	layout bsp \
