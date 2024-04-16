@@ -15,7 +15,6 @@ opt.mouse = "a"
 
 opt.showmode = true
 opt.clipboard = "unnamedplus"
-
 -- Enable break indent
 opt.breakindent = false
 -- tab

@@ -86,19 +86,18 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# zstyle ':omz:plugins:nvm' lazy yes
 plugins=(
 	git
 web-search
-git
 zsh-autosuggestions
 sudo
 zsh-syntax-highlighting
 fzf
-nvm
+# nvm
 	)
 
 source $ZSH/oh-my-zsh.sh
-export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 
 # User configuration
 
@@ -138,6 +137,7 @@ alias savezshconfig="source ~/.zshrc"
 alias tmuxconfig='nvim ~/.tmux.conf'
 alias alacrittyconfig="nvim ~/.alacritty.toml"
 
+
 # vim 
 alias n='nvim'
 alias nf='nvim "$(fzf)"'
@@ -159,6 +159,7 @@ bindkey -s ^f "tmux-sessionizer.sh\n"
 
 alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
 alias cpphere='cp -f ~/.clang-format .; cp -f ~/.clang-tidy .'
+alias pt="python3 tasks.py"
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -175,13 +176,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 
 # export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# neofetch
+# fnm
+if [[ "$(uname)" == "Linux" ]]; then
+  export PATH="/home/tony/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
