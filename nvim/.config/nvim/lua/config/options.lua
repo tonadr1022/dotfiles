@@ -15,6 +15,9 @@ opt.mouse = "a"
 
 opt.showmode = true
 opt.clipboard = "unnamedplus"
+
+-- vim.lsp.set_log_level("debug")
+--
 -- Enable break indent
 opt.breakindent = false
 -- tab

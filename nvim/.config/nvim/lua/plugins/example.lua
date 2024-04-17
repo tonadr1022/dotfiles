@@ -243,6 +243,11 @@ return {
   {"folke/flash.nvim", enabled = false},
   {
   "telescope.nvim",
+    opts = {
+      defaults = {
+        file_ignore_patterns = {"dep"},
+      },
+    },
   dependencies = {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "make",
