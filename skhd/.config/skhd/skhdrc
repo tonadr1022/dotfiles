@@ -72,14 +72,14 @@ cmd - 5 : yabai -m space --focus 5
 cmd - 6 : yabai -m space --focus 6
 cmd - 7 : yabai -m space --focus 7
 
-cmd - 0 :yabai -m space --focus next
-cmd - 9 :yabai -m space --focus prev
+# cmd - 0 :yabai -m space --focus next
+# cmd - 9 :yabai -m space --focus prev
 
 # show desktop
 shift + cmd - e : yabai -m space --toggle show-desktop
 
 # toggle full-screen
-shift + cmd - f : yabai -m window --toggle zoom-fullscreen
+shift + cmd - m : yabai -m window --toggle zoom-fullscreen
 
 # balance windows 
 shift + cmd - b : yabai -m space --balance
@@ -92,6 +92,9 @@ shift + cmd - b : yabai -m space --balance
 
 # -- Starting/Stopping/Restarting Yabai --
 # # stop/start/restart yabai
+cmd - 0 : yabai --start-service 
+cmd - 9 : yabai --stop-service
+
 # ctrl + alt - q : brew services stop yabai
 # ctrl + alt - s : brew services start yabai
 # ctrl + alt - r : brew services restart yabai
