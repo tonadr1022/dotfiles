@@ -67,17 +67,6 @@
 --   },
 --
 --   -- add pyright to lspconfig
---   {
---     "neovim/nvim-lspconfig",
---     ---@class PluginLspOpts
---     opts = {
---       ---@type lspconfig.options
---       servers = {
---         -- pyright will be automatically installed with mason and loaded with lspconfig
---         pyright = {},
---       },
---     },
---   },
 --
 --   -- add tsserver and setup with typescript.nvim instead of lspconfig
 --   {
@@ -271,20 +260,21 @@ return {
 
 
   -- fix clangd offset encoding 
--- {
---   "neovim/nvim-lspconfig",
---   opts = {
---       -- servers = {glslls = {
---       --   filetypes = {"glsl", "vs", "fs"},
---       -- }},
---     setup = {
---       -- clangd = function(_, opts)
---       --   opts.capabilities.offsetEncoding = { "utf-16" }
---       -- end,
---
---       },
---   },
--- },
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+            servers = {glsl_analyzer= {}},
+      -- servers = {glslls = {
+      --   filetypes = {"glsl", "vs", "fs"},
+      -- }},
+    setup = {
+      -- clangd = function(_, opts)
+      --   opts.capabilities.offsetEncoding = { "utf-16" }
+      -- end,
+
+      },
+  },
+},
 --
 -- {
 --   "neovim/nvim-lspconfig",

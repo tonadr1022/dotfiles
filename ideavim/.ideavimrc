@@ -1,4 +1,4 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+j .ideavimrc is a configuration file for IdeaVim plugin. It uses
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
@@ -96,13 +96,11 @@ Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/argtextobj.vim'
 
 map <leader>f <Action>(ReformatCode)
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
-
 set which-key
 set timeoutlen=5000
 

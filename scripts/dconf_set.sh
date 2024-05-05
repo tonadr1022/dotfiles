@@ -13,3 +13,5 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Super><Sh
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Super><Shift>5']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Super><Shift>6']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Super><Shift>7']"
+
+gsettings set org.gnome.desktop.default-applications.terminal exec alacritty

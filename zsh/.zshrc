@@ -194,3 +194,4 @@ fi
 # must clone vcpkg into this dir
 export VCPKG_ROOT="$HOME/dep/vcpkg"
 export PATH=$VCPKG_ROOT:$PATH 
+export PATH="$HOME/dep/tracy/bin":$PATH
