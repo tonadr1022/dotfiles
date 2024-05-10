@@ -174,6 +174,9 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+  chruby ruby-3.1.2
 fi
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -195,3 +198,4 @@ fi
 export VCPKG_ROOT="$HOME/dep/vcpkg"
 export PATH=$VCPKG_ROOT:$PATH 
 export PATH="$HOME/dep/tracy/bin":$PATH
+
