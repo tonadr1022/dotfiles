@@ -4,7 +4,7 @@ if [[ $# -eq 1 ]]; then
 	selected=$1
 else
 	selected=$(find ~/personal ~/class ~/ ~/class/cs577 ~/personal/cpp ~/personal/unity \
-		~/dotfiles/nvim/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+		~/personal/go ~/dotfiles/nvim/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 if [[ -z $selected ]]; then
 	exit 0

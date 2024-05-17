@@ -53,8 +53,8 @@ return {
     -- vim.keymap.set("n", ";k", function()
     --   harpoon:list():next()
     -- end)
-    vim.keymap.set("n", "<leader>su", function()
-      toggle_telescope(harpoon:list())
-    end, { desc = { "[S]earch Harpoon" } })
+    -- vim.keymap.set("n", "<leader>su", function()
+    --   toggle_telescope(harpoon:list())
+    -- end, { desc = { "[S]earch Harpoon" } })
   end,
 }
