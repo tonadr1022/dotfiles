@@ -168,8 +168,8 @@ alias pt="python3 tasks.py"
 
 if [[ "$(uname)" == "Linux" ]]; then
     # Set the compiler for Linux
-    export CC=clang
-    export CXX=clang++
+    export CC=clang-18
+    export CXX=clang++-18
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -191,10 +191,10 @@ export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # fnm
-if [[ "$(uname)" == "Linux" ]]; then
-  export PATH="/home/tony/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
+# if [[ "$(uname)" == "Linux" ]]; then
+#   export PATH="/home/tony/.local/share/fnm:$PATH"
+#   eval "`fnm env`"
+# fi
 
 # must clone vcpkg into this dir
 export VCPKG_ROOT="$HOME/dep/vcpkg"

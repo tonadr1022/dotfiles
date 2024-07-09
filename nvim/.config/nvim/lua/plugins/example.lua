@@ -263,6 +263,7 @@ return {
 {
   "neovim/nvim-lspconfig",
   opts = {
+            inlay_hints = {enabled=false},
             servers = {glsl_analyzer= {}},
       -- servers = {glslls = {
       --   filetypes = {"glsl", "vs", "fs"},

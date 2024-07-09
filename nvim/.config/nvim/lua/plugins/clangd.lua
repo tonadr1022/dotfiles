@@ -69,7 +69,7 @@ return {
           },
           cmd = {
             -- stylua: ignore
-            "clangd",
+            "/usr/bin/clangd-18",
             "--background-index",
             "--clang-tidy",
             "--header-insertion=iwyu",
