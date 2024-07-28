@@ -43,8 +43,8 @@ vim.keymap.del({ "n", "v" }, "<C-F>")
 -- or just use <C-\><C-n> to exit terminal mode
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- map("n", "<leader>pv", ":Ex<CR>", { desc = "Exit to netrw" })
-map("i", "kj", "<Esc>")
-map("v", "kj", "<Esc>")
+-- map("i", "kj", "<Esc>")
+-- map("v", "kj", "<Esc>")
 -- vim.keymap.set("n", ";rw", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but the current one" }) -- https://stackoverflow.com/a/42071865/516188
 -- open macos finder
 map("n", "<leader>of", ":silent !open .<CR>", { desc = "Open System File Explorer" })
