@@ -24,12 +24,12 @@ source "$CONFIG_DIR/colors.sh"
 # 	color=0x40000000
 
 sketchybar --bar height=32 \
-	blur_radius=100 \
-	position=top \
-	padding_left=10 \
-	padding_right=10 \
-	color=0x000000ff \
-	shadow=on
+    blur_radius=100 \
+    position=top \
+    padding_left=10 \
+    padding_right=10 \
+    color=0x000000ff \
+    shadow=on
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -37,23 +37,23 @@ sketchybar --bar height=32 \
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-	updates=when_shown
-	drawing=on
-	icon.font="$NERD_FONT:Regular:14.0"
-	icon.color=0xffffffff
-	label.font="$FONT:Light:14.0"
-	label.color=0xffffffff
-	label.padding_left=4
-	label.padding_right=4
-	icon.padding_left=4
-	icon.padding_right=4
+    updates=when_shown
+    drawing=on
+    icon.font="$NERD_FONT:Regular:14.0"
+    icon.color=0xffffffff
+    label.font="$FONT:Light:14.0"
+    label.color=0xffffffff
+    label.padding_left=4
+    label.padding_right=4
+    icon.padding_left=4
+    icon.padding_right=4
 )
 sketchybar --default "${default[@]}"
 
 source $ITEM_DIR/calendar.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/cpu.sh
-source $ITEM_DIR/spaces.sh
+# source $ITEM_DIR/spaces.sh
 source $ITEM_DIR/window_title.sh
 
 ##### Force all scripts to run the first time (never do this in a script) #####

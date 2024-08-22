@@ -175,8 +175,8 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
   export PATH=$PATH:$HOME/go/bin
-# source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-# source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
 # chruby 3.3.1
   # source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh 
 fi
