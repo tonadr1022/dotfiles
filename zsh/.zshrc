@@ -129,6 +129,10 @@ alias mkdir="mkdir -pv"
 alias c="clear"
 alias rd="rm -rf"
 
+function chdir() {
+mkdir -p "$1" && cd "$1";
+}
+
 # configs
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
@@ -158,7 +162,7 @@ PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer.sh\n"
 
 alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
-alias cpphere='cp -f ~/.clang-format .; cp -f ~/.clang-tidy .'
+alias cpphere='cp -f ~/.clang-format .; cp -f ~/.clang-tidy .; cp -f ~/.editorconfig .'
 alias pt="python3 tasks.py"
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
