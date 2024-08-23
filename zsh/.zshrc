@@ -162,7 +162,7 @@ PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer.sh\n"
 
 alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
-alias cpphere='cp -f ~/.clang-format .; cp -f ~/.clang-tidy .; cp -f ~/.editorconfig .'
+alias cpphere='cp -f ~/dotfiles/clang/.clang-format .; cp -f ~/dotfiles/clang/.clang-tidy .; cp -f ~/dotfiles/clang/.editorconfig .'
 alias pt="python3 tasks.py"
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
@@ -204,4 +204,4 @@ export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 export VCPKG_ROOT="$HOME/dep/vcpkg"
 export PATH=$VCPKG_ROOT:$PATH 
 export PATH="$HOME/dep/tracy/bin":$PATH
-
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
