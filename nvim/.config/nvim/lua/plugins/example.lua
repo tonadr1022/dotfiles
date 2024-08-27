@@ -1,3 +1,88 @@
+return {
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
+    },
+  },
+  { "lukas-reineke/indent-blankline.nvim", enabled = false },
+  { "nvim-lualine/lualine.nvim", enabled = false },
+  { "akinsho/bufferline.nvim", enabled = false },
+  { "echasnovski/mini.indentscope", enabled = false },
+  { "folke/flash.nvim", enabled = false },
+  {
+    "telescope.nvim",
+    opts = {
+      defaults = {
+        file_ignore_patterns = { "dep" },
+      },
+    },
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
+    keys = {
+      {
+        "<leader>/",
+        function()
+          require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+            previewer = false,
+          }))
+        end,
+        desc = "Fuzzily search current buffer",
+      },
+      {
+        "<leader>rn",
+        vim.lsp.buf.rename,
+        desc = "[R]e[n]ame file",
+      },
+    },
+  },
+
+  -- fix clangd offset encoding
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = false },
+      servers = { glsl_analyzer = {} },
+      setup = {},
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    },
+  },
+  { "nvim-treesitter/nvim-treesitter-context", enabled = false },
+  { "nvim-treesitter/nvim-treesitter-textobjects", enabled = false },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml",
+        "glsl",
+        "hlsl",
+      },
+    },
+  },
+}
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
 -- if true then return {} end
@@ -16,12 +101,6 @@
 --   { "ellisonleao/gruvbox.nvim" },
 --
 --   -- Configure LazyVim to load gruvbox
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "gruvbox",
---     },
---   },
 --
 --   -- change trouble config
 --   {
@@ -224,148 +303,3 @@
 --     end,
 --   },
 -- }
-return {
-  {"lukas-reineke/indent-blankline.nvim", enabled = false},
-  {"nvim-lualine/lualine.nvim", enabled = false},
-  {"akinsho/bufferline.nvim", enabled = false},
-  {"echasnovski/mini.indentscope", enabled = false},
-  {"folke/flash.nvim", enabled = false},
-  {
-  "telescope.nvim",
-    opts = {
-      defaults = {
-        file_ignore_patterns = {"dep"},
-      },
-    },
-  dependencies = {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
-    config = function()
-      require("telescope").load_extension("fzf")
-    end,
-  },
-  keys = {
-      {
-        "<leader>/",
-        function() require 'telescope.builtin'.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        previewer = false,
-      }) end, desc = "Fuzzily search current buffer"
-      },
-      {
-        "<leader>rn", vim.lsp.buf.rename, desc = "[R]e[n]ame file",
-      }
-  },
-
-  },
-
-
-  -- fix clangd offset encoding 
-{
-  "neovim/nvim-lspconfig",
-  opts = {
-            inlay_hints = {enabled=false},
-            servers = {glsl_analyzer= {}},
-      -- servers = {glslls = {
-      --   filetypes = {"glsl", "vs", "fs"},
-      -- }},
-    setup = {
-      -- clangd = function(_, opts)
-      --   opts.capabilities.offsetEncoding = { "utf-16" }
-      -- end,
-
-      },
-  },
-},
---
--- {
---   "neovim/nvim-lspconfig",
---   opts = {
---     servers = { eslint = {} },
---     setup = {
---       eslint = function()
---         require("lazyvim.util").lsp.on_attach(function(client)
---           if client.name == "eslint" then
---             client.server_capabilities.documentFormattingProvider = true
---           elseif client.name == "tsserver" then
---             client.server_capabilities.documentFormattingProvider = false
---           end
---         end)
---       end,
---     },
---   },
--- },
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = {
-  --     ensure_installed = {
-  --       "stylua",
-  --       "shellcheck",
-  --       "shfmt",
-  --       "flake8",
-  --       "glslls",
-  --     },
-  --   },
-  -- },
-    -- opts = {
-    --   defaults = {
-    --     layout_strategy = "horizontal",
-    --     layout_config = { prompt_position = "top" },
-    --     sorting_strategy = "ascending",
-    --     winblend = 0,
-    --   },
-    --
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      {"<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Find Files"},
-    }
-  },
-  {"nvim-treesitter/nvim-treesitter-context", enabled = false},
-  {"nvim-treesitter/nvim-treesitter-textobjects", enabled = false},
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "bash",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
-        "glsl",
-        "hlsl"
-      },
-    },
-   },
-  parsers = {
-    glsl = {
-      install_info = {
-        url = "https://github.com/tree-sitter/tree-sitter-glsl",
-        files = {"src/parser.c"},
-      },
-      filetype = "glsl" -- Vertex shader filetype
-    },
-    glsl_fs = {
-      install_info = {
-        url = "https://github.com/tree-sitter/tree-sitter-glsl",
-        files = {"src/parser.c"},
-      },
-      filetype = "fs" -- Fragment shader filetype
-    },  
-    glsl_vs = {
-      install_info = {
-        url = "https://github.com/tree-sitter/tree-sitter-glsl",
-        files = {"src/parser.c"},
-      },
-      filetype = "vs" -- Fragment shader filetype
-    },  
-  }
-}

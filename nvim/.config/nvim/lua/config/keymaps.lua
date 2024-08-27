@@ -32,9 +32,6 @@ map("n", "<leader>vh", ":hsplit<CR>", { noremap = true, silent = true, desc = "H
 map("n", "<leader>fw", ":wa | only<CR>", { noremap = true, silent = true })
 map("n", "<leader>rr", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-map("i", "∑", "<Esc>:w<CR>", { desc = "Write buffer" })
-map("n", "∑", ":w<CR>", { desc = "Write buffer" })
-map("v", "∑", ":w<CR>", { desc = "Write buffer" })
 vim.keymap.del({ "n", "v" }, "<C-F>")
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -47,6 +44,5 @@ map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- map("v", "kj", "<Esc>")
 -- vim.keymap.set("n", ";rw", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but the current one" }) -- https://stackoverflow.com/a/42071865/516188
 -- open macos finder
-map("n", "<leader>of", ":silent !open .<CR>", { desc = "Open System File Explorer" })
 -- map("n", "<C-f>", ":silent !~/.local/scripts/tmux-sessionizer.sh <CR>", { desc = "tmux-sessionizer" })
 -- vim.keymap.del({ "n", "v" }, "<space><space>")

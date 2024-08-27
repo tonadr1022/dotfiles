@@ -163,6 +163,7 @@ bindkey -s ^f "tmux-sessionizer.sh\n"
 
 alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
 alias cpphere='cp -f ~/dotfiles/clang/.clang-format .; cp -f ~/dotfiles/clang/.clang-tidy .; cp -f ~/dotfiles/clang/.editorconfig .'
+alias cmakehere='cp ~/dotfiles/clang/CMakeLists.txt .'
 alias pt="python3 tasks.py"
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
