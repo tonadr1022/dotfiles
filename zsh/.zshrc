@@ -165,6 +165,8 @@ alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google,
 alias cpphere='cp -f ~/dotfiles/clang/.clang-format .; cp -f ~/dotfiles/clang/.clang-tidy .; cp -f ~/dotfiles/clang/.editorconfig .'
 alias cmakehere='cp ~/dotfiles/clang/CMakeLists.txt .'
 alias pt="python3 tasks.py"
+alias cbr="~/dotfiles/bin/.local/scripts/cbr.sh"
+alias cbrr="~/dotfiles/bin/.local/scripts/cbrr.sh"
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -203,6 +205,7 @@ export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 
 # must clone vcpkg into this dir
 export VCPKG_ROOT="$HOME/dep/vcpkg"
-export PATH=$VCPKG_ROOT:$PATH 
-export PATH="$HOME/dep/tracy/bin":$PATH
+export PATH=$PATH:$VCPKG_ROOT
+export PATH=$PATH:"$HOME/dep/tracy/bin"
+export PATH=$PATH:"$HOME/dotfiles/bin/.local/scripts/"
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
