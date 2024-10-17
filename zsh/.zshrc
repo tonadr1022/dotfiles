@@ -1,3 +1,4 @@
+export PATH="/bin:$PATH"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -165,8 +166,12 @@ alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google,
 alias cpphere='cp -f ~/dotfiles/clang/.clang-format .; cp -f ~/dotfiles/clang/.clang-tidy .; cp -f ~/dotfiles/clang/.editorconfig .'
 alias cmakehere='cp ~/dotfiles/clang/CMakeLists.txt .'
 alias pt="python3 tasks.py"
+
 alias cbr="~/dotfiles/bin/.local/scripts/cbr.sh"
 alias cbrr="~/dotfiles/bin/.local/scripts/cbrr.sh"
+alias br="~/dotfiles/bin/.local/scripts/br.sh"
+alias brr="~/dotfiles/bin/.local/scripts/brr.sh"
+
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -175,8 +180,6 @@ alias cbrr="~/dotfiles/bin/.local/scripts/cbrr.sh"
 
 if [[ "$(uname)" == "Linux" ]]; then
     # Set the compiler for Linux
-    export CC=clang-18
-    export CXX=clang++-18
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
