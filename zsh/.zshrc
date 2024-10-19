@@ -160,7 +160,7 @@ alias td="tmux detach"
 alias ta="tmux attach"
 alias t="~/.local/scripts/tmux-sessionizer.sh"
 PATH="$PATH":"$HOME/.local/scripts/"
-bindkey -s ^f "tmux-sessionizer.sh\n"
+bindkey -s '^f' 'tmux-sessionizer.sh\n'
 
 alias clangformatfilehere='$(which clang-format) --style="{BasedOnStyle: google, ColumnLimit: 100}"  --dump-config > .clang-format'
 alias cpphere='cp -f ~/dotfiles/clang/.clang-format .; cp -f ~/dotfiles/clang/.clang-tidy .; cp -f ~/dotfiles/clang/.editorconfig .'
