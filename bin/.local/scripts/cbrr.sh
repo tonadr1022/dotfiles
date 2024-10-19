@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e # Exit immediately if any command fails
 
-if [[ -z "$1" ]]; then
-	echo "Usage: cbrr <executable name>"
-	exit 1
-fi
-
 # Create the build directory if it doesn't exist
 mkdir -p build/Release
 
