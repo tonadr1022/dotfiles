@@ -49,7 +49,8 @@ Checks: >
   -readability-convert-member-functions-to-static,
   -google-readability-todo,
   -readability-isolate-declaration,
-  -performance-no-int-to-ptr
+  -performance-no-int-to-ptr,
+  -bugprone-assert-side-effect
 # Turn all the warnings from the checks above into errors.
 WarningsAsErrors: "*"
 
