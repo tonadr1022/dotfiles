@@ -3,8 +3,8 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/personal ~/class ~/ ~/class/cs577 ~/personal/cpp ~/personal/unity \
-        ~/class/cs537 ~/personal/go ~/dotfiles/nvim/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/personal ~/class ~/ ~/personal/cpp \
+        ~/class/cs537 ~/dotfiles/nvim/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 if [[ -z $selected ]]; then
     exit 0
