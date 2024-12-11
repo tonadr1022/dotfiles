@@ -1,4 +1,4 @@
-j .ideavimrc is a configuration file for IdeaVim plugin. It uses
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
@@ -14,8 +14,9 @@ set clipboard+=ideaput
 " Don't use Ex mode, use Q for formatting.
 map Q gj
 map <C-c> <Esc>
-nnoremap <leader>; :
-vnoremap <leader>; :
+map <leader>; :
+" nnoremap <leader>; :
+" vnoremap <leader>; :
 
 let mapleader = " "
 vnoremap J :m '>+1<CR>gv=gv
@@ -26,8 +27,6 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 set relativenumber number
-inoremap kj <Esc>
-vnoremap kj <Esc>
 
 " delete without yank
 nnoremap ;d "_d
@@ -46,7 +45,6 @@ nnoremap <leader>of :!open .<CR>
 
 
 " ------------------ PLUGINS and IDEAVIM---------------------
-nnoremap <leader>ca :action ShowIntentionActions<CR> 
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
@@ -55,12 +53,15 @@ nmap <leader>sf <action>(GotoFile)
 nmap <leader>rn <action>(RenameElement)
 nmap <leader>rf <action>(RenameFile)
 nmap <leader>wa <action>(SaveAll)
+" nmap <leader>ca <action>(ShowIntentionActions)
 
 " window navigation
 nnoremap <leader>vv :action SplitVertically<CR>
 nnoremap <leader>vh :action SplitHorizontally<CR>
 nnoremap <leader>w :action CloseContent<CR>
-
+nmap <leader>ca :action ShowIntentionActions<CR>
+map ]d :action GotoNextError<CR>
+map [d :action GotoPreviousError<CR>
 
 nnoremap <c-=> :action UnSplit<CR>
 
@@ -70,14 +71,11 @@ sethandler <c-k> a:vim
 nnoremap <s-TAB> :action PreviousTab<CR>
 nnoremap <TAB> :action NextTab<CR>
 
-map<leader>rd <Action>(Debug)
-map<leader>rr <Action>(Run)
-
-
 nmap <leader>db <Action>(ToggleLineBreakpoint)
 
 nnoremap <c-s> :action FileStructurePopup<CR>
-nnoremap <c-o> :action GotoSymbol<CR>
+" nnoremap <c-o> :action GotoSymbol<CR>
+nnoremap <leader>ss :action GotoSymbol<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gD :action GotoDeclaration<CR>
 nnoremap gd :action GoToDefinition<CR>
