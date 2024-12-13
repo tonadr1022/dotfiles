@@ -32,6 +32,7 @@ map("n", "<leader>vh", ":hsplit<CR>", { noremap = true, silent = true, desc = "H
 map("n", "<leader>fw", ":wa | only<CR>", { noremap = true, silent = true })
 map("n", "<leader>rr", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+map({ "n", "v" }, "<leader>sb", "<cmd>FzfLua grep_curbuf<cr>", { desc = "Buffer" })
 vim.keymap.del({ "n", "v" }, "<C-F>")
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

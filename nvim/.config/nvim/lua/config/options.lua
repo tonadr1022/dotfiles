@@ -5,8 +5,6 @@
 local opt = vim.opt
 -- [[ Setting options ]]
 -- See `:help opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
 opt.number = true
 opt.relativenumber = true
 opt.spell = true
@@ -42,7 +40,7 @@ opt.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-opt.timeoutlen = 300
+opt.timeoutlen = 200
 
 -- Configure how new splits should be opened
 opt.splitright = true

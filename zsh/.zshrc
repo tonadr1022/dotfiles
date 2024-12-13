@@ -167,10 +167,7 @@ alias cpphere='cp -f ~/dotfiles/clang/.clang-format .; cp -f ~/dotfiles/clang/.c
 alias cmakehere='cp ~/dotfiles/clang/CMakeLists.txt .'
 alias pt="python3 tasks.py"
 
-alias cbr="~/dotfiles/bin/.local/scripts/cbr.sh"
-alias cbrr="~/dotfiles/bin/.local/scripts/cbrr.sh"
-alias br="~/dotfiles/bin/.local/scripts/br.sh"
-alias brr="~/dotfiles/bin/.local/scripts/brr.sh"
+alias lg="lazygit"
 
 # scripts
 # alias imgcat='~/scripts/imgcat.sh'
