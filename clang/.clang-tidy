@@ -50,7 +50,8 @@ Checks: >
   -google-readability-todo,
   -readability-isolate-declaration,
   -performance-no-int-to-ptr,
-  -bugprone-assert-side-effect
+  -bugprone-assert-side-effect,
+  -readability-avoid-nested-conditional-operator
 # Turn all the warnings from the checks above into errors.
 WarningsAsErrors: "*"
 
