@@ -51,7 +51,8 @@ Checks: >
   -readability-isolate-declaration,
   -performance-no-int-to-ptr,
   -bugprone-assert-side-effect,
-  -readability-avoid-nested-conditional-operator
+  -readability-avoid-nested-conditional-operator,
+  -modernize-use-designated-initializers
 # Turn all the warnings from the checks above into errors.
 WarningsAsErrors: "*"
 
