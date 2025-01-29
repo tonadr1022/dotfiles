@@ -122,9 +122,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 if [[ "$(uname)" == "Linux" ]]; then
-  alias cat="batcat"
-else
-  alias cat="bat"
+  alias bat="batcat"
 fi
 alias mkdir="mkdir -pv" 
 alias c="clear"
@@ -190,18 +188,13 @@ fi
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Set up fzf key bindings and fuzzy completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 
 # export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# fnm
-# if [[ "$(uname)" == "Linux" ]]; then
-#   export PATH="/home/tony/.local/share/fnm:$PATH"
-#   eval "`fnm env`"
-# fi
 
 # must clone vcpkg into this dir
 export VCPKG_ROOT="$HOME/dep/vcpkg"
