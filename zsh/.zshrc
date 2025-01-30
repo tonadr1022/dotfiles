@@ -16,7 +16,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="robbyrussell"
 bindkey '^ ' autosuggest-accept
 # bindkey '^ '      autosuggest-execute
@@ -90,7 +89,6 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 # zstyle ':omz:plugins:nvm' lazy yes
 plugins=(
 	git
-web-search
 zsh-autosuggestions
 sudo
 zsh-syntax-highlighting
@@ -201,10 +199,6 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
-
-# export NVM_DIR="$HOME/.config/nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # must clone vcpkg into this dir
 export VCPKG_ROOT="$HOME/dep/vcpkg"
