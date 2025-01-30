@@ -1138,7 +1138,7 @@ working-directory =
 # not granted, the keybind will not work. On macOS, you can find these
 # permissions in System Preferences -> Privacy & Security -> Accessibility.
 # keybind=clear
-keybind = ctrl+enter=unbind
+keybind = ctrl+enter=text:\r
 keybind = ctrl+shift+comma=reload_config
 keybind = alt+shift+seven=goto_tab:7
 keybind = alt+shift+six=goto_tab:6
@@ -1158,7 +1158,7 @@ keybind = super+ctrl+right_bracket=goto_split:next
 keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+shift+o=new_split:right
 keybind = ctrl+shift+c=copy_to_clipboard
-keybind = ctrl+shift+q=quit
+keybind = super+q=quit
 keybind = ctrl+shift+n=new_window
 keybind = ctrl+shift+page_down=jump_to_prompt:1
 keybind = ctrl+minus=decrease_font_size:1
@@ -1214,7 +1214,7 @@ keybind = ctrl+shift+i=inspector:toggle
 # left padding to 2 and the right padding to 4. If you want to set both
 # paddings to the same value, you can use a single value. For example,
 # `window-padding-x = 2` will set both paddings to 2.
-window-padding-x = 2
+window-padding-x = 6
 
 # Vertical window padding. This applies padding between the terminal cells and
 # the top and bottom window borders. The value is in points, meaning that it
@@ -1407,7 +1407,7 @@ window-width = 0
 # The default value is `default`.
 # 
 # This is currently only supported on macOS. This has no effect on Linux.
-window-save-state = default
+window-save-state = never
 
 # Resize the window in discrete increments of the focused surface's cell size.
 # If this is disabled, surfaces are resized in pixel increments. Currently
@@ -1509,7 +1509,7 @@ focus-follows-mouse = false
 #   * `allow`
 #   * `deny`
 # 
-clipboard-read = ask
+clipboard-read = allow
 
 clipboard-write = allow
 # Trims trailing whitespace on data that is copied to the clipboard. This does
@@ -1617,7 +1617,7 @@ config-default-files = true
 # any confirmation. This can also be set to `always`, which will always
 # confirm closing a surface, even if shell integration says a process isn't
 # running.
-confirm-close-surface = true
+confirm-close-surface = false
 
 # Whether or not to quit after the last surface is closed.
 # 
@@ -1749,7 +1749,7 @@ quick-terminal-autohide = true
 #   * `bash`, `elvish`, `fish`, `zsh` - Use this specific shell injection scheme.
 # 
 # The default value is `detect`.
-shell-integration = zsh
+shell-integration = detect
 
 # Shell integration features to enable if shell integration itself is enabled.
 # The format of this is a list of features to enable separated by commas. If
@@ -1766,7 +1766,8 @@ shell-integration = zsh
 #   * `title` - Set the window title via shell integration.
 # 
 # Example: `cursor`, `no-cursor`, `sudo`, `no-sudo`, `title`, `no-title`
-shell-integration-features = cursor,no-sudo,title
+# shell-integration-features = cursor,no-sudo,title
+shell-integration-features = no-cursor,no-sudo,title
 
 # Sets the reporting format for OSC sequences that request color information.
 # Ghostty currently supports OSC 10 (foreground), OSC 11 (background), and
@@ -1904,7 +1905,7 @@ macos-non-native-fullscreen = false
 # most cases.
 # 
 # Changing this option at runtime only applies to new windows.
-macos-titlebar-style = transparent
+macos-titlebar-style = hidden
 
 # Whether the proxy icon in the macOS titlebar is visible. The proxy icon
 # is the icon that represents the folder of the current working directory.
@@ -2199,7 +2200,7 @@ gtk-adwaita = true
 desktop-notifications = true
 
 # If `true`, the bold text will use the bright color palette.
-bold-is-bright = false
+bold-is-bright = true
 
 # This will be used to set the `TERM` environment variable.
 # HACK: We set this with an `xterm` prefix because vim uses that to enable key
