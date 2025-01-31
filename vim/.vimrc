@@ -13,8 +13,8 @@ set shiftwidth=4
 set expandtab
 set noswapfile
 set nobackup
-set undofile
-set undodir=~/.vim/undodir
+" set undofile
+" set undodir=~/.vim/undodir
 set ignorecase
 set smartcase
 " set signcolumn=yes

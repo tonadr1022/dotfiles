@@ -3,7 +3,7 @@ alias c="clear"
 alias rd="rm -rf"
 alias lg="lazygit"
 alias nf='nvim "$(fzf)"'
-bindkey -s '^f' '$$HOME/dotfiles/scripts/.scripts/tmux/tmux-sessionizer.sh\n'
+bindkey -s '^f' '$HOME/dotfiles/scripts/.scripts/tmux/tmux-sessionizer.sh\n'
 function chdir() {
 mkdir -p "$1" && cd "$1";
 }
