@@ -1,0 +1,35 @@
+alias mkdir="mkdir -pv" 
+alias c="clear"
+alias rd="rm -rf"
+alias lg="lazygit"
+alias nf='nvim "$(fzf)"'
+bindkey -s '^f' '$$HOME/dotfiles/scripts/.scripts/tmux/tmux-sessionizer.sh\n'
+function chdir() {
+mkdir -p "$1" && cd "$1";
+}
+
+function cpphere() {
+cp -f $HOME/dotfiles/clang/.clang-format .;
+cp -f $HOME/dotfiles/clang/.clang-tidy .;
+cp -f $HOME/dotfiles/clang/.editorconfig .;
+}
+
+function cmakehere() {
+cp $HOME/dotfiles/cmake_template/* .
+}
+
+# yazi terminal file manager
+function ff() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+if [[ "$(uname)" == "Linux" ]]; then
+  alias bat="batcat"
+fi
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
