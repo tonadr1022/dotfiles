@@ -4,13 +4,6 @@ alias rd="rm -rf"
 alias lg="lazygit"
 alias nf='nvim "$(fzf)"'
 
-function tms() {
-    if [[ -z "$1" ]]; then
-    else
-        tmsession.sh $1
-    fi
-}
-
 export PATH="$PATH:$HOME/.scripts/tmux"
 bindkey -s '^f' 'tmux-sessionizer.sh\n'
 function chdir() {
