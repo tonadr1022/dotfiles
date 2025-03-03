@@ -94,3 +94,5 @@ opt.pumheight = 8
 
 opt.cursorline = true
 opt.cursorlineopt = "number"
+-- disable cmd line
+vim.opt.cmdheight = 0
