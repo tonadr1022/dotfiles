@@ -35,4 +35,21 @@ if [[ "$(uname)" == "Linux" ]]; then
   alias bat="batcat"
 fi
 
+# Find and set branch name var if in git repository.
+function git_branch_name() {
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo '- ('$branch')'
+  fi
+}
+setopt prompt_subst
+prompt='%2/ $(git_branch_name) > '
+
+rc() {
+    echo `fc -ln -1` > run_command.txt
+}
+
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

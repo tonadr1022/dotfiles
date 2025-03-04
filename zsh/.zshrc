@@ -48,20 +48,17 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Add fancy colors for completion results
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 mkdir -p ~/.zsh/plugins
 if [ ! -d ~/.zsh/plugins/zsh-autosuggestions ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
 fi
-
 if [ ! -d ~/.zsh/plugins/zsh-syntax-highlighting ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/plugins/zsh-syntax-highlighting
 fi
 if [ ! -d ~/.zsh/plugins/zsh-history-substring-search ]; then
     git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/plugins/zsh-history-substring-search
 fi
-
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -75,6 +72,8 @@ function startruby() {
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
 		source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+    else 
+        chruby $(chruby)
 	fi
 }
 
@@ -84,26 +83,5 @@ if [[ -f ~/.fzf.zsh ]]; then
 	export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 fi
 
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    alias ls='ls --color=auto'
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    alias ls='ls -G'
-fi
-
-
-
-# Find and set branch name var if in git repository.
-function git_branch_name() {
-  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  if [[ $branch == "" ]];
-  then
-    :
-  else
-    echo '- ('$branch')'
-  fi
-}
-setopt prompt_subst
-prompt='%2/ $(git_branch_name) > '
-
 source $HOME/.zshrc_basic
+export EDITOR=nvim
