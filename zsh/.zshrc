@@ -83,5 +83,12 @@ if [[ -f ~/.fzf.zsh ]]; then
 	export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 fi
 
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    alias ls='ls --color=auto'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls='ls -G'
+fi
+
 source $HOME/.zshrc_basic
 export EDITOR=nvim
