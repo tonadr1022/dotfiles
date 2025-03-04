@@ -16,10 +16,10 @@ map("n", "N", "Nzzzv")
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 -- move visual selection
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
+-- map("v", "J", ":m '>+1<CR>gv=gv")
+-- map("v", "K", ":m '<-2<CR>gv=gv")
 -- better line joining
-map("n", "J", "mzJ`z")
+-- map("n", "J", "mzJ`z", { noremap = true, silent = true })
 -- delete without yank
 -- map("n", ";d", '"_d', { desc = "Delete without yank" })
 -- map("v", ";d", '"_d', { desc = "Delete without yank" })
