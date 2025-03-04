@@ -96,4 +96,4 @@ opt.cursorline = true
 opt.cursorlineopt = "number"
 vim.g.omni_sql_no_default_maps = 1
 -- disable cmd line
--- vim.opt.cmdheight = 0
+vim.opt.cmdheight = 0
