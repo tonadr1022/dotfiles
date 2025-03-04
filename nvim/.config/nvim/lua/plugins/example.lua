@@ -1,14 +1,7 @@
 return {
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight",
-    },
-  },
   -- { "nvim-lualine/lualine.nvim", enabled = false },
   { "akinsho/bufferline.nvim", enabled = false },
-  { "folke/flash.nvim", enabled = false },
-
+  -- { "folke/flash.nvim", enabled = false },
   {
     "neovim/nvim-lspconfig",
     opts = {
