@@ -2,8 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local map = vim.keymap.set
-map("n", "<Esc>", "<cmd>nohlsearch<CR>")
-map("n", "<C-c>", "<cmd>nohlsearch<CR>")
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { noremap = true, silent = true })
+map("n", "<C-c>", "<cmd>nohlsearch<CR>", { noremap = true, silent = true })
 map("n", "<leader>;", ":")
 --paging cursor center
 map("n", "<C-d>", "<C-d>zz")
@@ -41,10 +41,3 @@ vim.keymap.del({ "n", "v" }, "<C-F>")
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
--- map("n", "<leader>pv", ":Ex<CR>", { desc = "Exit to netrw" })
--- map("i", "kj", "<Esc>")
--- map("v", "kj", "<Esc>")
--- vim.keymap.set("n", ";rw", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but the current one" }) -- https://stackoverflow.com/a/42071865/516188
--- open macos finder
--- map("n", "<C-f>", ":silent !~/.local/scripts/tmux-sessionizer.sh <CR>", { desc = "tmux-sessionizer" })
--- vim.keymap.del({ "n", "v" }, "<space><space>")

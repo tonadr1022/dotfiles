@@ -94,3 +94,4 @@ opt.pumheight = 8
 
 opt.cursorline = true
 opt.cursorlineopt = "number"
+vim.g.omni_sql_no_default_maps = 1
