@@ -37,16 +37,13 @@ rc() {
 # autoload -U colors && colors
 # Enable menu selection when tab-completing
 zstyle ':completion:*' menu select
-
 # Highlight matches
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# Optional: make completion case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Better autocompletion options
 autoload -Uz compinit
 compinit
-# Optional: make completion case-insensitive
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-# Add fancy colors for completion results
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 mkdir -p ~/.zsh/plugins

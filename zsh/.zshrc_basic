@@ -4,6 +4,7 @@ alias rd="rm -rf"
 alias lg="lazygit"
 alias nf='nvim "$(fzf)"'
 alias df='df -h'
+alias n='nvim'
 
 export PATH="$PATH:$HOME/.scripts/tmux"
 bindkey -s '^f' 'tmux-sessionizer.sh\n'
@@ -46,7 +47,16 @@ function git_branch_name() {
   fi
 }
 setopt prompt_subst
-prompt='%2/ $(git_branch_name) > '
+# prompt='%2/ $(git_branch_name) > '
+# prompt='%F{blue}%2/ $(git_branch_name) %F{green}> %f'
+# prompt='%F{blue}%2/ $(git_branch_name) %F{$(( $? == 0 ? 2 : 1 ))}> %f'
+precmd() {
+  if [[ $? -eq 0 ]]; then
+    PROMPT='%F{blue}%2/ $(git_branch_name) %F{green}> %f'
+  else
+    PROMPT='%F{cyan}%2/ $(git_branch_name) %F{red}> %f'
+  fi
+}
 
 rc() {
     echo `fc -ln -1` > run_command.txt
