@@ -2,15 +2,15 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local map = vim.keymap.set
-map("n", "<Esc>", "<cmd>nohlsearch<CR>", { noremap = true, silent = true })
-map("n", "<C-c>", "<cmd>nohlsearch<CR>", { noremap = true, silent = true })
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
+map("n", "<C-c>", "<cmd>nohlsearch<CR>", { silent = true })
+map({ "i", "v" }, "<C-c>", "<Esc>", { noremap = true, silent = true })
 map("n", "<leader>;", ":")
 --paging cursor center
 map("n", "<C-d>", "<C-d>zz")
 map("v", "<C-d>", "<C-d>zz")
 -- search selection cursor center
 map("n", "n", "nzzzv")
-
 map("n", "N", "Nzzzv")
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
@@ -25,7 +25,7 @@ map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic messa
 -- map("v", ";d", '"_d', { desc = "Delete without yank" })
 -- Window management
 map("n", "<leader>vv", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical Split" })
-map("n", "<leader>vh", ":hsplit<CR>", { noremap = true, silent = true, desc = "Horizontal Split" })
+map("n", "<leader>vh", ":split<CR>", { noremap = true, silent = true, desc = "Horizontal Split" })
 
 --vim.api.nvim_set_keymap('n', '<leader>h', ':split<CR>', { noremap = true, silent = true, desc = "Horizontal Split" })
 -- map("n", "<leader>w", ":close<CR>", { noremap = true, silent = true, desc = "Close Window" })
@@ -35,13 +35,4 @@ map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]ui
 map({ "n", "v" }, "<leader>sb", "<cmd>FzfLua grep_curbuf<cr>", { desc = "Buffer" })
 map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.del({ "n", "v" }, "<C-F>")
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
-map("n", "<leader>tr", function()
-  Snacks.terminal("./run.sh", { cwd = LazyVim.root() })
-end, { desc = "Terminal (./run.sh)" })
