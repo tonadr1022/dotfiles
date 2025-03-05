@@ -5,6 +5,8 @@ alias lg="lazygit"
 alias nf='nvim "$(fzf)"'
 alias df='df -h'
 alias n='nvim'
+alias q='exit 0'
+alias f='./run.sh'
 
 export PATH="$PATH:$HOME/.scripts/tmux"
 bindkey -s '^f' 'tmux-sessionizer.sh\n'
@@ -36,27 +38,11 @@ if [[ "$(uname)" == "Linux" ]]; then
   alias bat="batcat"
 fi
 
-# Find and set branch name var if in git repository.
-function git_branch_name() {
-  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  if [[ $branch == "" ]];
-  then
-    :
-  else
-    echo '- ('$branch')'
-  fi
-}
-setopt prompt_subst
-# prompt='%2/ $(git_branch_name) > '
-# prompt='%F{blue}%2/ $(git_branch_name) %F{green}> %f'
-# prompt='%F{blue}%2/ $(git_branch_name) %F{$(( $? == 0 ? 2 : 1 ))}> %f'
-precmd() {
-  if [[ $? -eq 0 ]]; then
-    PROMPT='%F{blue}%2/ $(git_branch_name) %F{green}> %f'
-  else
-    PROMPT='%F{cyan}%2/ $(git_branch_name) %F{red}> %f'
-  fi
-}
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+PROMPT='%F{cyan}%2/ %F{red}${vcs_info_msg_0_}%F{green}> %f '
 
 rc() {
     echo `fc -ln -1` > run_command.txt
