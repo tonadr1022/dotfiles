@@ -15,9 +15,9 @@ mkdir -p "$1" && cd "$1";
 }
 
 function cpphere() {
-cp -f $HOME/dotfiles/clang/.clang-format .;
-cp -f $HOME/dotfiles/clang/.clang-tidy .;
-cp -f $HOME/dotfiles/clang/.editorconfig .;
+cp -f $HOME/dotfiles/clang/config/.clang-format .;
+cp -f $HOME/dotfiles/clang/config/.clang-tidy .;
+cp -f $HOME/dotfiles/clang/config/.editorconfig .;
 }
 
 function cmakehere() {
@@ -45,7 +45,8 @@ setopt PROMPT_SUBST
 PROMPT='%F{cyan}%2/ %F{red}${vcs_info_msg_0_}%F{green}> %f '
 
 rc() {
-    echo `fc -ln -1` > run_command.txt
+    echo `fc -ln -1` > run.sh
+    chmod +x run.sh
 }
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
