@@ -44,6 +44,9 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%F{cyan}%2/ %F{red}${vcs_info_msg_0_}%F{green}>%f '
 
+setclangd() {
+    echo "CompileFlags:\n  CompilationDatabase: $1" > .clangd
+}
 rc() {
     echo `fc -ln -1` > run.sh
     chmod +x run.sh
