@@ -80,6 +80,11 @@ if [[ -f ~/.fzf.zsh ]]; then
 	export FZF_DEFAULT_OPTS="--ansi --height=40% $FZF_DEFAULT_OPTS"
 fi
 
+function addfloating() {
+    echo "$1" >> $HOME/floating_apps.txt
+    yabai --restart-service
+}
+
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias ls='ls --color=auto'
