@@ -21,7 +21,7 @@ cp -f $HOME/dotfiles/clang/config/.editorconfig .;
 }
 
 function cmakehere() {
-cp $HOME/dotfiles/cmake_template/* .
+cp -rf $HOME/dotfiles/cmake_template/* .
 }
 
 # yazi terminal file manager
