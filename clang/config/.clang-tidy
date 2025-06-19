@@ -30,7 +30,8 @@ Checks: >
   -modernize-use-designated-initializers,
   -misc-no-recursion,
   -google-build-using-namespace,
-  -google-readability-casting
+  -google-readability-casting,
+  -readability-identifier-naming
 WarningsAsErrors: "*"
 CheckOptions:
   - { key: readability-identifier-naming.NamespaceCase, value: lower_case }

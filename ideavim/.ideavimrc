@@ -3,7 +3,7 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
-set scrolloff=8
+set scrolloff=999
 
 " Do incremental searching.
 set incsearch
@@ -19,8 +19,6 @@ map <leader>; :
 " vnoremap <leader>; :
 
 let mapleader = " "
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
@@ -36,6 +34,8 @@ nnoremap J mzJ`z
 " paging cursor center
 nnoremap <C-d> <C-d>zz
 vnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+vnoremap <C-u> <C-d>zz
 " search selection cursor center
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -48,7 +48,6 @@ nnoremap <leader>of :!open .<CR>
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
-nnoremap <leader>hi :action ShowHoverInfo<CR>
 nmap <leader>sf <action>(GotoFile)
 nmap <leader>rn <action>(RenameElement)
 nmap <leader>rf <action>(RenameFile)
@@ -77,12 +76,13 @@ nnoremap <c-s> :action FileStructurePopup<CR>
 " nnoremap <c-o> :action GotoSymbol<CR>
 nnoremap <leader>ss :action GotoSymbol<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gD :action GotoDeclaration<CR>
-nnoremap gd :action GoToDefinition<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gD :action GotoDefinition<CR>
 nnoremap gp :action GotoSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
 nnoremap gb :action Back<CR>
 nnoremap gf :action Forward<CR>
+nnoremap K :action ShowHoverInfo<CR>
 " terminal
 nmap <c-.> <Action>(Terminal)
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
