@@ -3,11 +3,12 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
-set scrolloff=999
+set scrolloff=8
 
 " Do incremental searching.
 set incsearch
 set hlsearch
+set ignorecase
 map <Esc> :set nohlsearch<CR>
 set clipboard+=unnamed
 set clipboard+=ideaput
@@ -42,47 +43,51 @@ nnoremap N Nzzzv
 
 
 nnoremap <leader>of :!open .<CR>
+map \f <Action>(ReformatCode)
 
 
 " ------------------ PLUGINS and IDEAVIM---------------------
-nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
-nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
-nmap <leader>sf <action>(GotoFile)
-nmap <leader>rn <action>(RenameElement)
-nmap <leader>rf <action>(RenameFile)
-nmap <leader>wa <action>(SaveAll)
+map \d <Action>(QuickImplementations)
+map <c-z> <Action>(ToggleDistractionFreeMode)
+map <c-t> <Action>(ActivateTerminalToolWindow)
+map <leader>t <Action>(Terminal.OpenInTerminal)
+nmap <leader>sf <Action>(GotoFile)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rf <Action>(RenameFile)
+nmap <leader>wa <Action>(SaveAll)
 " nmap <leader>ca <action>(ShowIntentionActions)
-
+ 
 " window navigation
-nnoremap <leader>vv :action SplitVertically<CR>
-nnoremap <leader>vh :action SplitHorizontally<CR>
-nnoremap <leader>w :action CloseContent<CR>
-nmap <leader>ca :action ShowIntentionActions<CR>
-map ]d :action GotoNextError<CR>
-map [d :action GotoPreviousError<CR>
+map <leader>vv <Action>(SplitVertically)
+map <leader>vh <Action>(SplitHorizontally)
+map <leader>ca <Action>(ShowIntentionActions)
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+map <leader>ch <Action>(SwitchHeaderSource)
 
 nnoremap <c-=> :action UnSplit<CR>
 
 sethandler <c-j> a:vim
 sethandler <c-k> a:vim
 
-nnoremap <s-TAB> :action PreviousTab<CR>
-nnoremap <TAB> :action NextTab<CR>
+map <s-TAB> <Action>(PreviousTab)
+map <TAB> <Action>(NextTab)
 
+map <leader>e <Action>(ShowProjectMenu)
 nmap <leader>db <Action>(ToggleLineBreakpoint)
 
-nnoremap <c-s> :action FileStructurePopup<CR>
+map <c-s> <Action>(FileStructurePopup)
 " nnoremap <c-o> :action GotoSymbol<CR>
-nnoremap <leader>ss :action GotoSymbol<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gd :action GotoDeclaration<CR>
-nnoremap gD :action GotoDefinition<CR>
-nnoremap gp :action GotoSuperMethod<CR>
-nnoremap gt :action GotoTest<CR>
-nnoremap gb :action Back<CR>
-nnoremap gf :action Forward<CR>
-nnoremap K :action ShowHoverInfo<CR>
+map <leader>ss <Action>(GotoSymbol)
+map gi <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map gD <Action>(GotoDefinition)
+map gp <Action>(GotoSuperMethod)
+map gt <Action>(GotoTest)
+map gb <Action>(Back)
+map gf <Action>(Forward)
+map K <Action>(ShowHoverInfo)
+
 " terminal
 nmap <c-.> <Action>(Terminal)
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
@@ -96,7 +101,6 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/argtextobj.vim'
 
-map <leader>f <Action>(ReformatCode)
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 set which-key

@@ -31,7 +31,8 @@ Checks: >
   -misc-no-recursion,
   -google-build-using-namespace,
   -google-readability-casting,
-  -readability-identifier-naming
+  -readability-identifier-naming,
+  -misc-no-recursion
 WarningsAsErrors: "*"
 CheckOptions:
   - { key: readability-identifier-naming.NamespaceCase, value: lower_case }
