@@ -7,7 +7,7 @@
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
 export FONT="SF Pro"
-export NERD_FONT="SFMono Nerd Font"
+export NERD_FONT="Hack Nerd Font"
 
 source "$CONFIG_DIR/colors.sh"
 
