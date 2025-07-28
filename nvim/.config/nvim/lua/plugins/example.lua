@@ -6,7 +6,12 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = { enabled = false },
-      servers = { glsl_analyzer = {} },
+      servers = {
+        glsl_analyzer = {},
+        clangd = {
+          filetypes = { "h", "hpp", "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+        },
+      },
       setup = {},
     },
   },
@@ -16,6 +21,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "objc",
         "bash",
         "html",
         "javascript",

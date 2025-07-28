@@ -12,7 +12,7 @@ alt - l : yabai -m window --focus east
 # # -- Modifying the Layout --
 #
 # # rotate layout clockwise
-# shift + alt - r : yabai -m space --rotate 270
+shift + alt - r : yabai -m space --rotate 270
 #
 # # flip along y-axis
 shift + alt - y : yabai -m space --mirror y-axis
@@ -68,7 +68,7 @@ alt - 7 : yabai -m space --focus 7
 # shift + alt - m : yabai -m window --toggle zoom-fullscreen
 #
 # # balance windows 
-# shift + alt - b : yabai -m space --balance
+shift + alt - b : yabai -m space --balance
 #
 # # maximize a window
 shift + alt - m : yabai -m window --toggle zoom-fullscreen
