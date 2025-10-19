@@ -1,6 +1,13 @@
 return {
   -- { "nvim-lualine/lualine.nvim", enabled = false },
-  { "akinsho/bufferline.nvim", enabled = false },
+  {
+    "akinsho/bufferline.nvim",
+    keys = {
+      { "]b", false },
+      { "<S-C-Tab>", "<Cmd>BufferLineCyclePrev<cr>", desc = "Previous Buffer" },
+      { "<C-Tab>", "<Cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+    },
+  },
   { "folke/flash.nvim", enabled = false },
   {
     "neovim/nvim-lspconfig",
