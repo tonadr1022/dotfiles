@@ -2,6 +2,7 @@ return {
   -- { "nvim-lualine/lualine.nvim", enabled = false },
   {
     "akinsho/bufferline.nvim",
+    enabled = false,
     keys = {
       { "]b", false },
       { "<S-C-Tab>", "<Cmd>BufferLineCyclePrev<cr>", desc = "Previous Buffer" },
@@ -19,7 +20,6 @@ return {
           filetypes = { "h", "hpp", "c", "cpp", "objc", "objcpp", "cuda", "proto" },
         },
       },
-      setup = {},
     },
   },
   { "nvim-treesitter/nvim-treesitter-context", enabled = false },
@@ -28,6 +28,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "hlsl",
         "objc",
         "bash",
         "html",

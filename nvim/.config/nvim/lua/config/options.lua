@@ -97,3 +97,21 @@ opt.cursorlineopt = "number"
 vim.g.omni_sql_no_default_maps = 1
 -- disable cmd line
 vim.opt.cmdheight = 0
+
+vim.filetype.add({
+  extension = {
+    hlsl = "hlsl",
+  },
+})
+
+vim.filetype.add({
+  extension = {
+    mm = "cpp",
+  },
+})
+
+vim.filetype.add({
+  extension = {
+    hlsli = "hlsl",
+  },
+})

@@ -1,0 +1,31 @@
+# Thanks gpt
+# --- Base16 (converted to Ghostty palette format) ---
+
+# Base16 indices → Ghostty palette numbers:
+# 0–7  = normal colors
+# 8–15 = bright colors
+
+palette = 0=#0F1919
+palette = 1=#abb2bf
+palette = 2=#A06057
+palette = 3=#65838E
+palette = 4=#B6AB8B
+palette = 5=#8F939A
+palette = 6=#abb2bf
+palette = 7=#FF0000
+
+palette = 8=#0D2525
+palette = 9=#abb2bf
+palette = 10=#A06057
+palette = 11=#65838E
+palette = 12=#B6AB8B
+palette = 13=#8F939A
+palette = 14=#abb2bf
+palette = 15=#FF0000
+
+background = #0F1919
+foreground = #abb2bf
+cursor-color = #abb2bf
+cursor-text = #0F1919
+selection-background = #102121
+selection-foreground = #abb2bf
