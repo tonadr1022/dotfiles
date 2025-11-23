@@ -397,7 +397,6 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
-theme = jblow
 
 # Background color for the window.
 # background = #000000
@@ -2027,8 +2026,7 @@ vt-kam-allowed = false
 # 
 # Changing this value at runtime and reloading the configuration will only
 # affect new windows, tabs, and splits.
-custom-shader = 
-
+# custom-shader = ./shaders/inside-the-matrix.glsl
 # If `true` (default), the focused terminal surface will run an animation
 # loop when custom shaders are used. This uses slightly more CPU (generally
 # less than 10%) but allows the shader to animate. This only runs if there
@@ -2517,3 +2515,7 @@ auto-update = check
 # This only works on macOS since only macOS has an auto-update feature.
 auto-update-channel = 
 
+font-thicken = true
+window-colorspace = display-p3
+
+theme = jblow

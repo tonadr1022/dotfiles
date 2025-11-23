@@ -7,6 +7,7 @@ local opt = vim.opt
 -- See `:help opt`
 opt.number = true
 opt.relativenumber = true
+opt.spelllang = "en_us"
 opt.spell = true
 opt.spelloptions = "camel"
 opt.mouse = "a"
