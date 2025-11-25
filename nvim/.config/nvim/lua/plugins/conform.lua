@@ -5,6 +5,7 @@ return {
       formatters_by_ft = {
         objc = { "clang_format" },
         objcpp = { "clang_format" },
+        hlsl = { "clang_format" },
       },
     },
   },
