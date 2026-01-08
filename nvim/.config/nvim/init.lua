@@ -23,9 +23,8 @@ vim.api.nvim_create_autocmd("User", {
       install_info = {
         url = "https://github.com/constantitus/tree-sitter-jai",
         files = { "src/parser.c", "src/scanner.c" },
-        revision = "9d6fa4a91fbb2a7d7ff69e688c4d2ff5bed45695", -- commit hash for revision to check out; HEAD if missing
-        branch = "main",
-        queries = "queries", -- also install queries from given directory
+        branch = "master",
+        queries = "queries",
       },
       filetype = "jai",
       filetype_to_parsername = "jai",
