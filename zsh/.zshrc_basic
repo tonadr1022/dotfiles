@@ -35,10 +35,6 @@ function ff() {
 	rm -f -- "$tmp"
 }
 
-if [[ "$(uname)" == "Linux" ]]; then
-  alias bat="batcat"
-fi
-
 autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '

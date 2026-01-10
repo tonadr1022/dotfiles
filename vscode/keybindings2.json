@@ -176,5 +176,9 @@
   {
     "key": "cmd+0",
     "command": "-workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "workbench.action.toggleZenMode"
   }
 ]

@@ -7,51 +7,53 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    },
-  },
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "ctrl-u": [
-        "action::Sequence",
-        ["vim::ScrollUp", "editor::ScrollCursorCenter"],
-      ],
-    },
-  },
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "ctrl-d": [
-        "action::Sequence",
-        ["vim::ScrollDown", "editor::ScrollCursorCenter"],
-      ],
-    },
-  },
-  {
     "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
     "bindings": {
-      "space v h": "pane::SplitDown",
-    },
+      "space v h": "pane::SplitDown"
+    }
   },
   {
     "context": "VimControl && !menu",
     "bindings": {
       "space v v": "pane::SplitRight",
-    },
+      "space w d": "pane::CloseActiveItem",
+      "ctrl-d": [
+        "action::Sequence",
+        ["vim::ScrollDown", "editor::ScrollCursorCenter"]
+      ],
+      "ctrl-u": [
+        "action::Sequence",
+        ["vim::ScrollUp", "editor::ScrollCursorCenter"]
+      ],
+      "space s g": [
+        "task::Spawn",
+        { "task_name": "Find in Files", "reveal_target": "center" }
+      ],
+      "space l g": [
+        "task::Spawn",
+        { "task_name": "Lazygit", "reveal_target": "center" }
+      ]
+    }
   },
   {
-    "context": "VimControl && !menu",
     "bindings": {
-      "space w d": "pane::CloseActiveItem",
-    },
+      "ctrl-p": [
+        "task::Spawn",
+        { "task_name": "File Finder", "reveal_target": "center" }
+      ],
+      "ctrl-g": [
+        "task::Spawn",
+        { "task_name": "Find in Files", "reveal_target": "center" }
+      ],
+      "ctrl-w": "pane::CloseActiveItem"
+    }
   },
+  {
+    "context": "Terminal",
+    "bindings": {
+      // "ctrl-/": "workspace::ToggleBottomDock",
+      "ctrl-n": ["workspace::SendKeystrokes", "down"],
+      "ctrl-p": ["workspace::SendKeystrokes", "up"]
+    }
+  }
 ]
