@@ -1,0 +1,100 @@
+{
+  "editor.stickyScroll.enabled": false,
+  "editor.renderWhitespace": "none",
+  "workbench.colorCustomizations": {
+    "editor.background": "#000000",
+    "terminal.background": "#000000",
+    "sideBar.background": "#0a0a0a",
+    "activityBar.background": "#000000",
+    "statusBar.background": "#000000",
+    "panel.background": "#000000",
+    "tab.activeBackground": "#0d0d0d",
+    "tab.inactiveBackground": "#050505",
+    "editorGroupHeader.tabsBackground": "#000000",
+    "titleBar.activeBackground": "#000000",
+    "titleBar.inactiveBackground": "#000000",
+    "breadcrumb.background": "#000000",
+    "editorGutter.background": "#000000",
+    "minimap.background": "#000000"
+  },
+  // EDITOR
+  "editor.inlayHints.enabled": "off",
+  "editor.guides.indentation": false,
+  "editor.cursorSurroundingLines": 10,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.cursorBlinking": "solid",
+  "editor.renderControlCharacters": false,
+  "editor.accessibilitySupport": "off",
+  "editor.renderLineHighlight": "none",
+  // Window
+  // "window.commandCenter": true,
+  // VIM
+  "vim.replaceWithRegister": true,
+  "vim.vimrc.enable": false,
+  "vim.useCtrlKeys": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.incsearch": true,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-b>": false
+  },
+  "workbench.reduceMotion": "on",
+  "vim.searchHighlightColor": "rgba(255,255,255,0.3)",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "c", "a"],
+      "command": "editor.action.codeAction"
+    },
+    {
+      "before": ["<leader>", "s", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", ";"],
+      "after": [":"]
+    }
+  ],
+  "workbench.colorTheme": "Tokyo Night",
+  "zenMode.fullScreen": false,
+  "window.density.editorTabHeight": "compact",
+  "workbench.editor.scrollToSwitchTabs": true,
+  "zenMode.hideLineNumbers": false,
+  "editor.lineNumbers": "relative",
+  "vim.smartRelativeLine": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "editor.cursorSurroundingLinesStyle": "all",
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.layoutControl.enabled": false,
+  "zenMode.hideStatusBar": false
+}
