@@ -13,7 +13,7 @@ opt.spelloptions = "camel"
 opt.mouse = "a"
 
 opt.showmode = true
-opt.clipboard = "unnamedplus"
+-- opt.clipboard = "unnamedplus"
 
 -- vim.lsp.set_log_level("debug")
 --
