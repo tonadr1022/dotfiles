@@ -4,20 +4,53 @@
     "command": "zed \"$(tv files)\"",
     "hide": "always",
     "allow_concurrent_runs": true,
-    "use_new_terminal": true
+    "use_new_terminal": true,
   },
   {
     "label": "Find in Files",
     "command": "zed \"$(tv --input '${ZED_SELECTED_TEXT:-}' --exact text)\"",
     "hide": "always",
     "allow_concurrent_runs": true,
-    "use_new_terminal": true
+    "use_new_terminal": true,
   },
   {
     "label": "Lazygit",
-    "command": "lazygit",
+    "command": "lazygit -p $ZED_WORKTREE_ROOT",
     "hide": "always",
     "allow_concurrent_runs": true,
-    "use_new_terminal": true
-  }
+    "use_new_terminal": true,
+  },
+  {
+    "label": "save crp",
+    "command": "echo $ZED_RELATIVE_FILE >> scratchpad/harpoon.txt",
+    "reveal": "never",
+    "hide": "always",
+  },
+  {
+    "label": "open crp 1",
+    "command": "cat scratchpad/harpoon.txt | sed -n '1p' | xargs zed",
+    "shell": "system",
+    "reveal": "never",
+    "hide": "always",
+  },
+  {
+    "label": "open crp 2",
+    "command": "cat scratchpad/harpoon.txt | sed -n '2p' | xargs zed",
+    "shell": "system",
+    "reveal": "never",
+    "hide": "always",
+  },
+  {
+    "label": "open crp 3",
+    "command": "cat scratchpad/harpoon.txt | sed -n '3p' | xargs zed",
+    "shell": "system",
+    "reveal": "never",
+    "hide": "always",
+  },
+  {
+    "label": "edit crp",
+    "command": "zed scratchpad/harpoon.txt",
+    "shell": "system",
+    "hide": "always",
+  },
 ]

@@ -7,13 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "show_wrap_guides": false,
+  "indent_guides": {
+    "enabled": false,
+  },
   "git_panel": {
-    "tree_view": true
+    "tree_view": true,
   },
   "git": {
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "telemetry": {
     "diagnostics": true,
@@ -45,4 +49,22 @@
     "light": "One Light",
     "dark": "Tokyo Night",
   },
+  "theme_overrides": {
+    "Tokyo Night": {
+      "editor.background": "#000",
+      "panel.background": "#000",
+      "elevated_surface.background": "#000",
+      "surface.background": "#000",
+      "background": "#000",
+      "status_bar.background": "#000",
+      "toolbar.background": "#000",
+      "tab_bar.background": "#000",
+      "editor.gutter.background": "#000",
+      "editor.subheader.background": "#000",
+      "editor.active_line.background": "#000",
+      "terminal.background": "#000",
+      "scrollbar.track.background": "#000",
+      }
+    }
+  }
 }

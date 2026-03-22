@@ -9,51 +9,99 @@
   {
     "context": "((vim_mode == helix_normal || vim_mode == helix_select) && !menu)",
     "bindings": {
-      "space v h": "pane::SplitDown"
-    }
+      "space v h": "pane::SplitDown",
+    },
+  },
+  {
+    "bindings": {
+      "shift-ctrl-h": "workspace::ActivatePaneLeft",
+      "shift-ctrl-l": "workspace::ActivatePaneRight",
+      "shift-ctrl-j": "workspace::ActivatePaneDown",
+      "shift-ctrl-k": "workspace::ActivatePaneUp",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-\\": "pane::SplitRight",
+    },
   },
   {
     "context": "VimControl && !menu",
     "bindings": {
       "space v v": "pane::SplitRight",
+      "ctrl-\\": "pane::SplitRight",
       "space w d": "pane::CloseActiveItem",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-d": [
         "action::Sequence",
-        ["vim::ScrollDown", "editor::ScrollCursorCenter"]
+        ["vim::ScrollDown", "editor::ScrollCursorCenter"],
       ],
       "ctrl-u": [
         "action::Sequence",
-        ["vim::ScrollUp", "editor::ScrollCursorCenter"]
+        ["vim::ScrollUp", "editor::ScrollCursorCenter"],
       ],
       "space s g": [
         "task::Spawn",
-        { "task_name": "Find in Files", "reveal_target": "center" }
+        { "task_name": "Find in Files", "reveal_target": "center" },
       ],
       "space l g": [
         "task::Spawn",
-        { "task_name": "Lazygit", "reveal_target": "center" }
-      ]
-    }
+        { "task_name": "Lazygit", "reveal_target": "center" },
+      ],
+    },
   },
   {
+    "context": "Workspace",
     "bindings": {
-      "ctrl-p": [
+      "alt-g": [
         "task::Spawn",
-        { "task_name": "File Finder", "reveal_target": "center" }
+        { "task_name": "Lazygit", "reveal_target": "center" },
       ],
-      "ctrl-g": [
+      "alt-p": "file_finder::Toggle",
+      // "alt-p": [
+      //   "task::Spawn",
+      //   { "task_name": "File Finder", "reveal_target": "center" },
+      // ],
+      "space s f": [
         "task::Spawn",
-        { "task_name": "Find in Files", "reveal_target": "center" }
+        { "task_name": "File Finder", "reveal_target": "center" },
       ],
-      "ctrl-w": "pane::CloseActiveItem"
-    }
+      "ctrl-w": "pane::CloseActiveItem",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
       // "ctrl-/": "workspace::ToggleBottomDock",
       "ctrl-n": ["workspace::SendKeystrokes", "down"],
-      "ctrl-p": ["workspace::SendKeystrokes", "up"]
-    }
-  }
+      "ctrl-p": ["workspace::SendKeystrokes", "up"],
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "space h": "pane::TogglePinTab",
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4],
+      "space 0": ["pane::ActivateItem", 9], // optional — slot 10
+    },
+  },
+  // {
+  //   "context": "Editor && VimControl && !VimWaiting && !menu",
+  //   "bindings": {
+  //     "space h": [
+  //       "task::Spawn",
+  //       { "task_name": "edit crp", "reveal_target": "center" },
+  //     ],
+  //     "space H": ["task::Spawn", { "task_name": "save crp" }],
+  //     "space 1": ["task::Spawn", { "task_name": "open crp 1" }],
+  //     "space 2": ["task::Spawn", { "task_name": "open crp 2" }],
+  //     "space 3": ["task::Spawn", { "task_name": "open crp 3" }],
+  //   },
+  // },
 ]
