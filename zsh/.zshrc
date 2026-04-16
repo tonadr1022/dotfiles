@@ -1,4 +1,3 @@
-bindkey '^ ' autosuggest-accept
 
 # export ZSH="$HOME/.oh-my-zsh"
 # Uncomment the following line if you want to disable marking untracked files
@@ -64,6 +63,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 	export PATH=$PATH:$HOME/go/bin
 fi
+
+bindkey '^ ' autosuggest-accept
+bindkey '^N' forward-word
 
 function startruby() {
 	if [[ "$OSTYPE" == "darwin"* ]]; then
