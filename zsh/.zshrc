@@ -28,9 +28,10 @@ setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 
-rc() {
-    echo `fc -ln -1` > run_command.txt
-}
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)" && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
 # source ~/.config/zsh/completion.zsh
 # Use colors for completion menus
 # autoload -U colors && colors
@@ -45,19 +46,18 @@ autoload -Uz compinit
 compinit
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
-mkdir -p ~/.zsh/plugins
-if [ ! -d ~/.zsh/plugins/zsh-autosuggestions ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
-fi
-if [ ! -d ~/.zsh/plugins/zsh-syntax-highlighting ]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/plugins/zsh-syntax-highlighting
-fi
-if [ ! -d ~/.zsh/plugins/zsh-history-substring-search ]; then
-    git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/plugins/zsh-history-substring-search
-fi
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+zinit wait lucid for \
+    atload'_zsh_autosuggest_start' \
+    zsh-users/zsh-autosuggestions
+
+zinit wait lucid for \
+    zdharma-continuum/fast-syntax-highlighting
+
+zinit wait lucid for \
+    zsh-users/zsh-history-substring-search
+
+zinit snippet OMZP::git
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

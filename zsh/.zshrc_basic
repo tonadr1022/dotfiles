@@ -8,6 +8,7 @@ alias n='nvim'
 alias q='exit 0'
 alias f='./run.sh'
 alias bt='btop'
+alias gds='git diff --shortstat'
 
 export PATH="$PATH:$HOME/.scripts/tmux"
 bindkey -s '^f' 'tmux-sessionizer.sh\n'
