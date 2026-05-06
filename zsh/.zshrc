@@ -58,6 +58,8 @@ zinit wait lucid for \
     zsh-users/zsh-history-substring-search
 
 zinit snippet OMZP::git
+zinit snippet OMZP::aliases
+zinit snippet OMZP::alias-finder
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

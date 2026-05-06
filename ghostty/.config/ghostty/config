@@ -1,8 +1,13 @@
 font-family = JetBrainsMonoNL Nerd Font
 window-colorspace = display-p3
 theme = tkyo
-window-decoration = false
+#window-decoration = false
 macos-titlebar-style = hidden
 cursor-color = #ffffff
 cursor-style = block
 shell-integration-features = no-cursor,no-sudo,title
+keybind = ctrl+enter=unbind
+maximize=true
+window-width=99999
+window-height=99999
+confirm-close-surface=false
