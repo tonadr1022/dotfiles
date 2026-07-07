@@ -51,41 +51,91 @@
   "vim.searchHighlightColor": "rgba(255,255,255,0.3)",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
     },
     {
-      "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
     },
     {
-      "before": ["K"],
-      "commands": ["editor.action.showHover"]
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
     },
     {
-      "before": ["<C-d>"],
-      "after": ["<C-d>", "z", "z"]
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
     },
     {
-      "before": ["<C-u>"],
-      "after": ["<C-u>", "z", "z"]
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "<C-d>",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "<C-u>"
+      ],
+      "after": [
+        "<C-u>",
+        "z",
+        "z"
+      ]
     }
   ],
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<leader>", "c", "a"],
+      "before": [
+        "<leader>",
+        "c",
+        "a"
+      ],
       "command": "editor.action.codeAction"
     },
     {
-      "before": ["<leader>", "s", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "<leader>",
+        "s",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["<leader>", ";"],
-      "after": [":"]
+      "before": [
+        "<leader>",
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
     }
   ],
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Tomorrow Night Blue",
   "zenMode.fullScreen": false,
   "window.density.editorTabHeight": "compact",
   "workbench.editor.scrollToSwitchTabs": true,
@@ -96,5 +146,22 @@
   "editor.cursorSurroundingLinesStyle": "all",
   "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.layoutControl.enabled": false,
-  "zenMode.hideStatusBar": false
+  "zenMode.hideStatusBar": false,
+  "workbench.activityBar.orientation": "vertical",
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "clangd.path": "/opt/homebrew/opt/llvm/bin/clangd",
+  "C_Cpp.codeAnalysis.clangTidy.path": "/opt/homebrew/opt/llvm/bin/clang-tidy",
+  "clangd.arguments": [
+    "--background-index",
+  ],
+  "window.autoDetectColorScheme": false,
+  "fzf-picker.general.openCommand": "cursor -g",
+  "fzf-picker.customTasks": [
+    {
+      "name": "zoxide",
+      "command": "cursor $(zoxide query --interactive)"
+    }
+  ]
 }

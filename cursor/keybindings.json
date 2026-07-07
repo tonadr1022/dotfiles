@@ -407,5 +407,14 @@
   {
     "key": "shift+cmd+f",
     "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f5",
+    "command": "-cmake.launchTarget",
+    "when": "cmake:enableFullFeatureSet && !cmake:hideDebugCommand && !inDebugMode"
+  },
+  {
+    "key": "ctrl+shift+f5",
+    "command": "workbench.action.tasks.test"
   }
 ]
