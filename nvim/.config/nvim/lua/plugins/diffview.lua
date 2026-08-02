@@ -139,7 +139,7 @@ return {
       desc = "Diff vs base (editable)",
     },
     {
-      "<leader>gD",
+      "<leader>gq",
       "<cmd>DiffviewClose<cr>",
       desc = "Close Diffview",
     },
