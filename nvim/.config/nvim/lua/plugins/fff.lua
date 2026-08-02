@@ -7,6 +7,7 @@ return {
   -- for nixos:
   -- build = "nix run .#release",
   opts = {
+    prompt_vim_mode = true, -- <Esc> leaves insert for normal mode; second <Esc> closes
     debug = {
       enabled = false,
       show_scores = false,
