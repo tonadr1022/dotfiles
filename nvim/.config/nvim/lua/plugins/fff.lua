@@ -7,7 +7,7 @@ return {
   -- for nixos:
   -- build = "nix run .#release",
   opts = {
-    prompt_vim_mode = true, -- <Esc> leaves insert for normal mode; second <Esc> closes
+    --    prompt_vim_mode = true, -- <Esc> leaves insert for normal mode; second <Esc> closes
     layout = {
       height = 1.0,
       width = 1.0,
