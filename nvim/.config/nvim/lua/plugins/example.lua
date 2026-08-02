@@ -9,9 +9,6 @@ return {
       { "<C-Tab>", "<Cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
     },
   },
-  {
-    "sindrets/diffview.nvim",
-  },
   { "folke/flash.nvim", enabled = false },
   {
     "neovim/nvim-lspconfig",
