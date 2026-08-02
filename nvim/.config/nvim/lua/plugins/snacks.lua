@@ -9,6 +9,12 @@ return {
           position = "float",
         },
       },
+      lazygit = {
+        win = {
+          width = 0,
+          height = 0,
+        },
+      },
       dashboard = {
         preset = {
           header = [[

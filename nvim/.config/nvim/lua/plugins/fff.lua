@@ -8,6 +8,11 @@ return {
   -- build = "nix run .#release",
   opts = {
     prompt_vim_mode = true, -- <Esc> leaves insert for normal mode; second <Esc> closes
+    layout = {
+      height = 1.0,
+      width = 1.0,
+      preview_size = 0.65,
+    },
     debug = {
       enabled = false,
       show_scores = false,
